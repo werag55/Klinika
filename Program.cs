@@ -1,6 +1,13 @@
+using Klinika.Data;
+using Klinika.Mapper;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddDbContext<AppDbContext>();
+builder.Services.AddAutoMapper(typeof(MappingConfig));
+
+IConfiguration configuration = builder.Configuration.AddJsonFile("appsettings.json").AddEnvironmentVariables().Build();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
