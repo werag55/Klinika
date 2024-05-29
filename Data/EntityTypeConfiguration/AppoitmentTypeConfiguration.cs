@@ -10,8 +10,8 @@ namespace Klinika.Data.EntityTypeConfiguration
         {
             builder.HasKey(x => x.Id);
 
-            builder.Property(x => x.GUID)
-                .IsRequired();
+            //builder.Property(x => x.GUID)
+            //    .IsRequired();
 
             builder.Property(e => e.Date)
                 .IsRequired();
