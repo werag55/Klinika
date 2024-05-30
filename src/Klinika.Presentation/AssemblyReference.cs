@@ -4,6 +4,6 @@ namespace Klinika.Presentation;
 
 public static class AssemblyReference
 {
-    sadasd
+    sadasdsdfds
     public static readonly Assembly Assembly = typeof(AssemblyReference).Assembly;
 }
