@@ -1,8 +1,8 @@
-﻿using Klinika.Data.EntityTypeConfiguration;
-using Klinika.Models;
+﻿using Klinika.Infrastructure.EntityTypeConfiguration;
+using Klinika.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace Klinika.Data
+namespace Klinika.Infrastructure
 {
     public class AppDbContext : DbContext
     {
@@ -14,14 +14,6 @@ namespace Klinika.Data
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
 
-        }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            string connection = new ConfigurationBuilder().AddJsonFile("appsettings.json")
-                .Build().GetConnectionString("DefaultConnection") ??
-                throw new NullReferenceException("Database connection string could not be loaded!");
-            optionsBuilder.UseSqlServer(connection);
         }
 
         protected override void OnModelCreating(ModelBuilder builder)

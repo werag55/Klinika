@@ -1,8 +1,8 @@
-﻿using Klinika.Models;
+﻿using Klinika.Domain.Models;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore;
 
-namespace Klinika.Data.EntityTypeConfiguration
+namespace Klinika.Infrastructure.EntityTypeConfiguration
 {
     public class CatTypeConfiguration : IEntityTypeConfiguration<Cat>
     {

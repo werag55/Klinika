@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore;
-using Klinika.Models;
+using Klinika.Domain.Models;
 
-namespace Klinika.Data.EntityTypeConfiguration
+namespace Klinika.Infrastructure.EntityTypeConfiguration
 {
     public class ClientTypeConfiguration : IEntityTypeConfiguration<Client>
     {

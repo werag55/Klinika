@@ -6,9 +6,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Klinika.Data;
-using Klinika.Models;
+using Klinika.Domain.Models;
 
-namespace Klinika.Controllers
+namespace Klinika.Presentation.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

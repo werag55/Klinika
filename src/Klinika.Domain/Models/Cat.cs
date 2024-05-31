@@ -1,4 +1,4 @@
-﻿namespace Klinika.Models
+﻿namespace Klinika.Domain.Models
 {
     public class Cat
     {
