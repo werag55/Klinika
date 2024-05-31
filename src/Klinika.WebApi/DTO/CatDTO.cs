@@ -1,6 +1,4 @@
-﻿using Klinika.Models;
-
-namespace Klinika.DTO
+﻿namespace Klinika.DTO
 {
     public class CatDTO
     {

@@ -3,6 +3,66 @@
   "WorkspaceRootPath": "C:\\Users\\weron\\Pulpit\\Klinika\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{909C58A7-42BF-495B-9BDD-0C090A66BC21}|src\\Klinika.WebApi\\Klinika.WebApi.csproj|c:\\users\\weron\\pulpit\\klinika\\src\\klinika.webapi\\mapper\\mappingconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{909C58A7-42BF-495B-9BDD-0C090A66BC21}|src\\Klinika.WebApi\\Klinika.WebApi.csproj|solutionrelative:src\\klinika.webapi\\mapper\\mappingconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{909C58A7-42BF-495B-9BDD-0C090A66BC21}|src\\Klinika.WebApi\\Klinika.WebApi.csproj|c:\\users\\weron\\pulpit\\klinika\\src\\klinika.webapi\\dto\\catdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{909C58A7-42BF-495B-9BDD-0C090A66BC21}|src\\Klinika.WebApi\\Klinika.WebApi.csproj|solutionrelative:src\\klinika.webapi\\dto\\catdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{909C58A7-42BF-495B-9BDD-0C090A66BC21}|src\\Klinika.WebApi\\Klinika.WebApi.csproj|c:\\users\\weron\\pulpit\\klinika\\src\\klinika.webapi\\dto\\appoitmentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{909C58A7-42BF-495B-9BDD-0C090A66BC21}|src\\Klinika.WebApi\\Klinika.WebApi.csproj|solutionrelative:src\\klinika.webapi\\dto\\appoitmentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E195E1D-95EE-43FC-A9B7-9A4383D96359}|src\\Klinika.Presentation\\Klinika.Presentation.csproj|c:\\users\\weron\\pulpit\\klinika\\src\\klinika.presentation\\controllers\\catscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E195E1D-95EE-43FC-A9B7-9A4383D96359}|src\\Klinika.Presentation\\Klinika.Presentation.csproj|solutionrelative:src\\klinika.presentation\\controllers\\catscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E195E1D-95EE-43FC-A9B7-9A4383D96359}|src\\Klinika.Presentation\\Klinika.Presentation.csproj|c:\\users\\weron\\pulpit\\klinika\\src\\klinika.presentation\\controllers\\appoitmentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E195E1D-95EE-43FC-A9B7-9A4383D96359}|src\\Klinika.Presentation\\Klinika.Presentation.csproj|solutionrelative:src\\klinika.presentation\\controllers\\appoitmentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8801EBD-3BAE-446A-884C-1BFC2287C394}|src\\Klinika.Infrastructure\\Klinika.Infrastructure.csproj|c:\\users\\weron\\pulpit\\klinika\\src\\klinika.infrastructure\\repositories\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8801EBD-3BAE-446A-884C-1BFC2287C394}|src\\Klinika.Infrastructure\\Klinika.Infrastructure.csproj|solutionrelative:src\\klinika.infrastructure\\repositories\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89EF6D6C-5060-4ED1-BB45-CA350F6B8F3B}|src\\Klinika.Domain\\Klinika.Domain.csproj|c:\\users\\weron\\pulpit\\klinika\\src\\klinika.domain\\repositories\\iappoitmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89EF6D6C-5060-4ED1-BB45-CA350F6B8F3B}|src\\Klinika.Domain\\Klinika.Domain.csproj|solutionrelative:src\\klinika.domain\\repositories\\iappoitmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F9985CC-031A-46A2-B575-8CF59393DE01}|src\\Klinika.Application\\Klinika.Application.csproj|c:\\users\\weron\\pulpit\\klinika\\src\\klinika.application\\klinika.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{1F9985CC-031A-46A2-B575-8CF59393DE01}|src\\Klinika.Application\\Klinika.Application.csproj|solutionrelative:src\\klinika.application\\klinika.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89EF6D6C-5060-4ED1-BB45-CA350F6B8F3B}|src\\Klinika.Domain\\Klinika.Domain.csproj|c:\\users\\weron\\pulpit\\klinika\\src\\klinika.domain\\klinika.domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{89EF6D6C-5060-4ED1-BB45-CA350F6B8F3B}|src\\Klinika.Domain\\Klinika.Domain.csproj|solutionrelative:src\\klinika.domain\\klinika.domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E195E1D-95EE-43FC-A9B7-9A4383D96359}|src\\Klinika.Presentation\\Klinika.Presentation.csproj|c:\\users\\weron\\pulpit\\klinika\\src\\klinika.presentation\\klinika.presentation.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{1E195E1D-95EE-43FC-A9B7-9A4383D96359}|src\\Klinika.Presentation\\Klinika.Presentation.csproj|solutionrelative:src\\klinika.presentation\\klinika.presentation.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8801EBD-3BAE-446A-884C-1BFC2287C394}|src\\Klinika.Infrastructure\\Klinika.Infrastructure.csproj|c:\\users\\weron\\pulpit\\klinika\\src\\klinika.infrastructure\\repositories\\appoitmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8801EBD-3BAE-446A-884C-1BFC2287C394}|src\\Klinika.Infrastructure\\Klinika.Infrastructure.csproj|solutionrelative:src\\klinika.infrastructure\\repositories\\appoitmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8801EBD-3BAE-446A-884C-1BFC2287C394}|src\\Klinika.Infrastructure\\Klinika.Infrastructure.csproj|c:\\users\\weron\\pulpit\\klinika\\src\\klinika.infrastructure\\repositories\\catrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8801EBD-3BAE-446A-884C-1BFC2287C394}|src\\Klinika.Infrastructure\\Klinika.Infrastructure.csproj|solutionrelative:src\\klinika.infrastructure\\repositories\\catrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89EF6D6C-5060-4ED1-BB45-CA350F6B8F3B}|src\\Klinika.Domain\\Klinika.Domain.csproj|c:\\users\\weron\\pulpit\\klinika\\src\\klinika.domain\\repositories\\icatrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89EF6D6C-5060-4ED1-BB45-CA350F6B8F3B}|src\\Klinika.Domain\\Klinika.Domain.csproj|solutionrelative:src\\klinika.domain\\repositories\\icatrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89EF6D6C-5060-4ED1-BB45-CA350F6B8F3B}|src\\Klinika.Domain\\Klinika.Domain.csproj|c:\\users\\weron\\pulpit\\klinika\\src\\klinika.domain\\repositories\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89EF6D6C-5060-4ED1-BB45-CA350F6B8F3B}|src\\Klinika.Domain\\Klinika.Domain.csproj|solutionrelative:src\\klinika.domain\\repositories\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8801EBD-3BAE-446A-884C-1BFC2287C394}|src\\Klinika.Infrastructure\\Klinika.Infrastructure.csproj|c:\\users\\weron\\pulpit\\klinika\\src\\klinika.infrastructure\\klinika.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{A8801EBD-3BAE-446A-884C-1BFC2287C394}|src\\Klinika.Infrastructure\\Klinika.Infrastructure.csproj|solutionrelative:src\\klinika.infrastructure\\klinika.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{909C58A7-42BF-495B-9BDD-0C090A66BC21}|src\\Klinika.WebApi\\Klinika.WebApi.csproj|c:\\users\\weron\\pulpit\\klinika\\src\\klinika.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{909C58A7-42BF-495B-9BDD-0C090A66BC21}|src\\Klinika.WebApi\\Klinika.WebApi.csproj|solutionrelative:src\\klinika.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -21,18 +81,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{A8801EBD-3BAE-446A-884C-1BFC2287C394}|src\\Klinika.Infrastructure\\Klinika.Infrastructure.csproj|c:\\users\\weron\\pulpit\\klinika\\src\\klinika.infrastructure\\entitytypeconfiguration\\cattypeconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A8801EBD-3BAE-446A-884C-1BFC2287C394}|src\\Klinika.Infrastructure\\Klinika.Infrastructure.csproj|solutionrelative:src\\klinika.infrastructure\\entitytypeconfiguration\\cattypeconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1E195E1D-95EE-43FC-A9B7-9A4383D96359}|src\\Klinika.Presentation\\Klinika.Presentation.csproj|c:\\users\\weron\\pulpit\\klinika\\src\\klinika.presentation\\klinika.presentation.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{1E195E1D-95EE-43FC-A9B7-9A4383D96359}|src\\Klinika.Presentation\\Klinika.Presentation.csproj|solutionrelative:src\\klinika.presentation\\klinika.presentation.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A8801EBD-3BAE-446A-884C-1BFC2287C394}|src\\Klinika.Infrastructure\\Klinika.Infrastructure.csproj|c:\\users\\weron\\pulpit\\klinika\\src\\klinika.infrastructure\\klinika.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{A8801EBD-3BAE-446A-884C-1BFC2287C394}|src\\Klinika.Infrastructure\\Klinika.Infrastructure.csproj|solutionrelative:src\\klinika.infrastructure\\klinika.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1F9985CC-031A-46A2-B575-8CF59393DE01}|src\\Klinika.Application\\Klinika.Application.csproj|c:\\users\\weron\\pulpit\\klinika\\src\\klinika.application\\klinika.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{1F9985CC-031A-46A2-B575-8CF59393DE01}|src\\Klinika.Application\\Klinika.Application.csproj|solutionrelative:src\\klinika.application\\klinika.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{89EF6D6C-5060-4ED1-BB45-CA350F6B8F3B}|src\\Klinika.Domain\\Klinika.Domain.csproj|c:\\users\\weron\\pulpit\\klinika\\src\\klinika.domain\\models\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -66,7 +114,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -78,93 +126,158 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MappingConfig.cs",
+              "DocumentMoniker": "C:\\Users\\weron\\Pulpit\\Klinika\\src\\Klinika.WebApi\\Mapper\\MappingConfig.cs",
+              "RelativeDocumentMoniker": "src\\Klinika.WebApi\\Mapper\\MappingConfig.cs",
+              "ToolTip": "C:\\Users\\weron\\Pulpit\\Klinika\\src\\Klinika.WebApi\\Mapper\\MappingConfig.cs",
+              "RelativeToolTip": "src\\Klinika.WebApi\\Mapper\\MappingConfig.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-31T01:10:17.339Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CatDTO.cs",
+              "DocumentMoniker": "C:\\Users\\weron\\Pulpit\\Klinika\\src\\Klinika.WebApi\\DTO\\CatDTO.cs",
+              "RelativeDocumentMoniker": "src\\Klinika.WebApi\\DTO\\CatDTO.cs",
+              "ToolTip": "C:\\Users\\weron\\Pulpit\\Klinika\\src\\Klinika.WebApi\\DTO\\CatDTO.cs*",
+              "RelativeToolTip": "src\\Klinika.WebApi\\DTO\\CatDTO.cs*",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-31T01:10:10.765Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AppoitmentDTO.cs",
+              "DocumentMoniker": "C:\\Users\\weron\\Pulpit\\Klinika\\src\\Klinika.WebApi\\DTO\\AppoitmentDTO.cs",
+              "RelativeDocumentMoniker": "src\\Klinika.WebApi\\DTO\\AppoitmentDTO.cs",
+              "ToolTip": "C:\\Users\\weron\\Pulpit\\Klinika\\src\\Klinika.WebApi\\DTO\\AppoitmentDTO.cs*",
+              "RelativeToolTip": "src\\Klinika.WebApi\\DTO\\AppoitmentDTO.cs*",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-31T01:09:47.909Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "UnitOfWork.cs",
+              "DocumentMoniker": "C:\\Users\\weron\\Pulpit\\Klinika\\src\\Klinika.Infrastructure\\Repositories\\UnitOfWork.cs",
+              "RelativeDocumentMoniker": "src\\Klinika.Infrastructure\\Repositories\\UnitOfWork.cs",
+              "ToolTip": "C:\\Users\\weron\\Pulpit\\Klinika\\src\\Klinika.Infrastructure\\Repositories\\UnitOfWork.cs",
+              "RelativeToolTip": "src\\Klinika.Infrastructure\\Repositories\\UnitOfWork.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAmwA0AAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-31T01:04:07.75Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Klinika.Domain",
+              "DocumentMoniker": "C:\\Users\\weron\\Pulpit\\Klinika\\src\\Klinika.Domain\\Klinika.Domain.csproj",
+              "RelativeDocumentMoniker": "src\\Klinika.Domain\\Klinika.Domain.csproj",
+              "ToolTip": "C:\\Users\\weron\\Pulpit\\Klinika\\src\\Klinika.Domain\\Klinika.Domain.csproj",
+              "RelativeToolTip": "src\\Klinika.Domain\\Klinika.Domain.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-05-31T00:58:17.984Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "CatRepository.cs",
+              "DocumentMoniker": "C:\\Users\\weron\\Pulpit\\Klinika\\src\\Klinika.Infrastructure\\Repositories\\CatRepository.cs",
+              "RelativeDocumentMoniker": "src\\Klinika.Infrastructure\\Repositories\\CatRepository.cs",
+              "ToolTip": "C:\\Users\\weron\\Pulpit\\Klinika\\src\\Klinika.Infrastructure\\Repositories\\CatRepository.cs",
+              "RelativeToolTip": "src\\Klinika.Infrastructure\\Repositories\\CatRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-31T00:52:51.853Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "AppoitmentRepository.cs",
+              "DocumentMoniker": "C:\\Users\\weron\\Pulpit\\Klinika\\src\\Klinika.Infrastructure\\Repositories\\AppoitmentRepository.cs",
+              "RelativeDocumentMoniker": "src\\Klinika.Infrastructure\\Repositories\\AppoitmentRepository.cs",
+              "ToolTip": "C:\\Users\\weron\\Pulpit\\Klinika\\src\\Klinika.Infrastructure\\Repositories\\AppoitmentRepository.cs",
+              "RelativeToolTip": "src\\Klinika.Infrastructure\\Repositories\\AppoitmentRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAwwB8AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-31T00:52:30.248Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IAppoitmentRepository.cs",
+              "DocumentMoniker": "C:\\Users\\weron\\Pulpit\\Klinika\\src\\Klinika.Domain\\Repositories\\IAppoitmentRepository.cs",
+              "RelativeDocumentMoniker": "src\\Klinika.Domain\\Repositories\\IAppoitmentRepository.cs",
+              "ToolTip": "C:\\Users\\weron\\Pulpit\\Klinika\\src\\Klinika.Domain\\Repositories\\IAppoitmentRepository.cs",
+              "RelativeToolTip": "src\\Klinika.Domain\\Repositories\\IAppoitmentRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-31T00:45:39.529Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AppoitmentsController.cs",
+              "DocumentMoniker": "C:\\Users\\weron\\Pulpit\\Klinika\\src\\Klinika.Presentation\\Controllers\\AppoitmentsController.cs",
+              "RelativeDocumentMoniker": "src\\Klinika.Presentation\\Controllers\\AppoitmentsController.cs",
+              "ToolTip": "C:\\Users\\weron\\Pulpit\\Klinika\\src\\Klinika.Presentation\\Controllers\\AppoitmentsController.cs",
+              "RelativeToolTip": "src\\Klinika.Presentation\\Controllers\\AppoitmentsController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-31T00:33:30.542Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "Klinika.Presentation",
               "DocumentMoniker": "C:\\Users\\weron\\Pulpit\\Klinika\\src\\Klinika.Presentation\\Klinika.Presentation.csproj",
               "RelativeDocumentMoniker": "src\\Klinika.Presentation\\Klinika.Presentation.csproj",
-              "ToolTip": "C:\\Users\\weron\\Pulpit\\Klinika\\src\\Klinika.Presentation\\Klinika.Presentation.csproj*",
-              "RelativeToolTip": "src\\Klinika.Presentation\\Klinika.Presentation.csproj*",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ToolTip": "C:\\Users\\weron\\Pulpit\\Klinika\\src\\Klinika.Presentation\\Klinika.Presentation.csproj",
+              "RelativeToolTip": "src\\Klinika.Presentation\\Klinika.Presentation.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2024-05-31T00:27:10.194Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Klinika.Infrastructure",
-              "DocumentMoniker": "C:\\Users\\weron\\Pulpit\\Klinika\\src\\Klinika.Infrastructure\\Klinika.Infrastructure.csproj",
-              "RelativeDocumentMoniker": "src\\Klinika.Infrastructure\\Klinika.Infrastructure.csproj",
-              "ToolTip": "C:\\Users\\weron\\Pulpit\\Klinika\\src\\Klinika.Infrastructure\\Klinika.Infrastructure.csproj*",
-              "RelativeToolTip": "src\\Klinika.Infrastructure\\Klinika.Infrastructure.csproj*",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-05-31T00:26:41.119Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\weron\\Pulpit\\Klinika\\src\\Klinika.WebApi\\Program.cs",
-              "RelativeDocumentMoniker": "src\\Klinika.WebApi\\Program.cs",
-              "ToolTip": "C:\\Users\\weron\\Pulpit\\Klinika\\src\\Klinika.WebApi\\Program.cs*",
-              "RelativeToolTip": "src\\Klinika.WebApi\\Program.cs*",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAtAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-31T00:23:53.76Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "ClientTypeConfiguration.cs",
-              "DocumentMoniker": "C:\\Users\\weron\\Pulpit\\Klinika\\src\\Klinika.Infrastructure\\EntityTypeConfiguration\\ClientTypeConfiguration.cs",
-              "RelativeDocumentMoniker": "src\\Klinika.Infrastructure\\EntityTypeConfiguration\\ClientTypeConfiguration.cs",
-              "ToolTip": "C:\\Users\\weron\\Pulpit\\Klinika\\src\\Klinika.Infrastructure\\EntityTypeConfiguration\\ClientTypeConfiguration.cs*",
-              "RelativeToolTip": "src\\Klinika.Infrastructure\\EntityTypeConfiguration\\ClientTypeConfiguration.cs*",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAABAAAA",
+              "Title": "CatsController.cs",
+              "DocumentMoniker": "C:\\Users\\weron\\Pulpit\\Klinika\\src\\Klinika.Presentation\\Controllers\\CatsController.cs",
+              "RelativeDocumentMoniker": "src\\Klinika.Presentation\\Controllers\\CatsController.cs",
+              "ToolTip": "C:\\Users\\weron\\Pulpit\\Klinika\\src\\Klinika.Presentation\\Controllers\\CatsController.cs",
+              "RelativeToolTip": "src\\Klinika.Presentation\\Controllers\\CatsController.cs",
+              "ViewState": "AQIAAC4AAAAAAAAAAAAmwBIAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-31T00:22:56.515Z",
+              "WhenOpened": "2024-05-31T00:49:09.078Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CatTypeConfiguration.cs",
-              "DocumentMoniker": "C:\\Users\\weron\\Pulpit\\Klinika\\src\\Klinika.Infrastructure\\EntityTypeConfiguration\\CatTypeConfiguration.cs",
-              "RelativeDocumentMoniker": "src\\Klinika.Infrastructure\\EntityTypeConfiguration\\CatTypeConfiguration.cs",
-              "ToolTip": "C:\\Users\\weron\\Pulpit\\Klinika\\src\\Klinika.Infrastructure\\EntityTypeConfiguration\\CatTypeConfiguration.cs*",
-              "RelativeToolTip": "src\\Klinika.Infrastructure\\EntityTypeConfiguration\\CatTypeConfiguration.cs*",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAPAAAA",
+              "DocumentIndex": 12,
+              "Title": "ICatRepository.cs",
+              "DocumentMoniker": "C:\\Users\\weron\\Pulpit\\Klinika\\src\\Klinika.Domain\\Repositories\\ICatRepository.cs",
+              "RelativeDocumentMoniker": "src\\Klinika.Domain\\Repositories\\ICatRepository.cs",
+              "ToolTip": "C:\\Users\\weron\\Pulpit\\Klinika\\src\\Klinika.Domain\\Repositories\\ICatRepository.cs",
+              "RelativeToolTip": "src\\Klinika.Domain\\Repositories\\ICatRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-31T00:22:51.67Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AppoitmentTypeConfiguration.cs",
-              "DocumentMoniker": "C:\\Users\\weron\\Pulpit\\Klinika\\src\\Klinika.Infrastructure\\EntityTypeConfiguration\\AppoitmentTypeConfiguration.cs",
-              "RelativeDocumentMoniker": "src\\Klinika.Infrastructure\\EntityTypeConfiguration\\AppoitmentTypeConfiguration.cs",
-              "ToolTip": "C:\\Users\\weron\\Pulpit\\Klinika\\src\\Klinika.Infrastructure\\EntityTypeConfiguration\\AppoitmentTypeConfiguration.cs*",
-              "RelativeToolTip": "src\\Klinika.Infrastructure\\EntityTypeConfiguration\\AppoitmentTypeConfiguration.cs*",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-31T00:20:20.171Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\weron\\Pulpit\\Klinika\\src\\Klinika.Infrastructure\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "src\\Klinika.Infrastructure\\AppDbContext.cs",
-              "ToolTip": "C:\\Users\\weron\\Pulpit\\Klinika\\src\\Klinika.Infrastructure\\AppDbContext.cs*",
-              "RelativeToolTip": "src\\Klinika.Infrastructure\\AppDbContext.cs*",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAawBAAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-30T23:44:15.793Z",
+              "WhenOpened": "2024-05-31T00:45:58.037Z",
               "EditorCaption": ""
             },
             {
@@ -182,12 +295,103 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 13,
+              "Title": "IUnitOfWork.cs",
+              "DocumentMoniker": "C:\\Users\\weron\\Pulpit\\Klinika\\src\\Klinika.Domain\\Repositories\\IUnitOfWork.cs",
+              "RelativeDocumentMoniker": "src\\Klinika.Domain\\Repositories\\IUnitOfWork.cs",
+              "ToolTip": "C:\\Users\\weron\\Pulpit\\Klinika\\src\\Klinika.Domain\\Repositories\\IUnitOfWork.cs",
+              "RelativeToolTip": "src\\Klinika.Domain\\Repositories\\IUnitOfWork.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-31T00:46:10.754Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Klinika.Infrastructure",
+              "DocumentMoniker": "C:\\Users\\weron\\Pulpit\\Klinika\\src\\Klinika.Infrastructure\\Klinika.Infrastructure.csproj",
+              "RelativeDocumentMoniker": "src\\Klinika.Infrastructure\\Klinika.Infrastructure.csproj",
+              "ToolTip": "C:\\Users\\weron\\Pulpit\\Klinika\\src\\Klinika.Infrastructure\\Klinika.Infrastructure.csproj",
+              "RelativeToolTip": "src\\Klinika.Infrastructure\\Klinika.Infrastructure.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-05-31T00:26:41.119Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\weron\\Pulpit\\Klinika\\src\\Klinika.WebApi\\Program.cs",
+              "RelativeDocumentMoniker": "src\\Klinika.WebApi\\Program.cs",
+              "ToolTip": "C:\\Users\\weron\\Pulpit\\Klinika\\src\\Klinika.WebApi\\Program.cs",
+              "RelativeToolTip": "src\\Klinika.WebApi\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-31T00:23:53.76Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "ClientTypeConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\weron\\Pulpit\\Klinika\\src\\Klinika.Infrastructure\\EntityTypeConfiguration\\ClientTypeConfiguration.cs",
+              "RelativeDocumentMoniker": "src\\Klinika.Infrastructure\\EntityTypeConfiguration\\ClientTypeConfiguration.cs",
+              "ToolTip": "C:\\Users\\weron\\Pulpit\\Klinika\\src\\Klinika.Infrastructure\\EntityTypeConfiguration\\ClientTypeConfiguration.cs",
+              "RelativeToolTip": "src\\Klinika.Infrastructure\\EntityTypeConfiguration\\ClientTypeConfiguration.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-31T00:22:56.515Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "CatTypeConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\weron\\Pulpit\\Klinika\\src\\Klinika.Infrastructure\\EntityTypeConfiguration\\CatTypeConfiguration.cs",
+              "RelativeDocumentMoniker": "src\\Klinika.Infrastructure\\EntityTypeConfiguration\\CatTypeConfiguration.cs",
+              "ToolTip": "C:\\Users\\weron\\Pulpit\\Klinika\\src\\Klinika.Infrastructure\\EntityTypeConfiguration\\CatTypeConfiguration.cs",
+              "RelativeToolTip": "src\\Klinika.Infrastructure\\EntityTypeConfiguration\\CatTypeConfiguration.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-31T00:22:51.67Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "AppoitmentTypeConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\weron\\Pulpit\\Klinika\\src\\Klinika.Infrastructure\\EntityTypeConfiguration\\AppoitmentTypeConfiguration.cs",
+              "RelativeDocumentMoniker": "src\\Klinika.Infrastructure\\EntityTypeConfiguration\\AppoitmentTypeConfiguration.cs",
+              "ToolTip": "C:\\Users\\weron\\Pulpit\\Klinika\\src\\Klinika.Infrastructure\\EntityTypeConfiguration\\AppoitmentTypeConfiguration.cs",
+              "RelativeToolTip": "src\\Klinika.Infrastructure\\EntityTypeConfiguration\\AppoitmentTypeConfiguration.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-31T00:20:20.171Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\weron\\Pulpit\\Klinika\\src\\Klinika.Infrastructure\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "src\\Klinika.Infrastructure\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\weron\\Pulpit\\Klinika\\src\\Klinika.Infrastructure\\AppDbContext.cs",
+              "RelativeToolTip": "src\\Klinika.Infrastructure\\AppDbContext.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAawBAAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-30T23:44:15.793Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
               "Title": "Client.cs",
               "DocumentMoniker": "C:\\Users\\weron\\Pulpit\\Klinika\\src\\Klinika.Domain\\Models\\Client.cs",
               "RelativeDocumentMoniker": "src\\Klinika.Domain\\Models\\Client.cs",
-              "ToolTip": "C:\\Users\\weron\\Pulpit\\Klinika\\src\\Klinika.Domain\\Models\\Client.cs*",
-              "RelativeToolTip": "src\\Klinika.Domain\\Models\\Client.cs*",
+              "ToolTip": "C:\\Users\\weron\\Pulpit\\Klinika\\src\\Klinika.Domain\\Models\\Client.cs",
+              "RelativeToolTip": "src\\Klinika.Domain\\Models\\Client.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-31T00:01:42.7Z",
@@ -195,12 +399,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 21,
               "Title": "Cat.cs",
               "DocumentMoniker": "C:\\Users\\weron\\Pulpit\\Klinika\\src\\Klinika.Domain\\Models\\Cat.cs",
               "RelativeDocumentMoniker": "src\\Klinika.Domain\\Models\\Cat.cs",
-              "ToolTip": "C:\\Users\\weron\\Pulpit\\Klinika\\src\\Klinika.Domain\\Models\\Cat.cs*",
-              "RelativeToolTip": "src\\Klinika.Domain\\Models\\Cat.cs*",
+              "ToolTip": "C:\\Users\\weron\\Pulpit\\Klinika\\src\\Klinika.Domain\\Models\\Cat.cs",
+              "RelativeToolTip": "src\\Klinika.Domain\\Models\\Cat.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-31T00:01:39.544Z",
@@ -208,12 +412,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 22,
               "Title": "Appoitment.cs",
               "DocumentMoniker": "C:\\Users\\weron\\Pulpit\\Klinika\\src\\Klinika.Domain\\Models\\Appoitment.cs",
               "RelativeDocumentMoniker": "src\\Klinika.Domain\\Models\\Appoitment.cs",
-              "ToolTip": "C:\\Users\\weron\\Pulpit\\Klinika\\src\\Klinika.Domain\\Models\\Appoitment.cs*",
-              "RelativeToolTip": "src\\Klinika.Domain\\Models\\Appoitment.cs*",
+              "ToolTip": "C:\\Users\\weron\\Pulpit\\Klinika\\src\\Klinika.Domain\\Models\\Appoitment.cs",
+              "RelativeToolTip": "src\\Klinika.Domain\\Models\\Appoitment.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-31T00:01:29.042Z",
@@ -221,7 +425,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 25,
               "Title": "AssemblyReference.cs",
               "DocumentMoniker": "C:\\Users\\weron\\Pulpit\\Klinika\\src\\Klinika.Application\\AssemblyReference.cs",
               "RelativeDocumentMoniker": "src\\Klinika.Application\\AssemblyReference.cs",
@@ -234,12 +438,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 23,
               "Title": "AssemblyReference.cs",
               "DocumentMoniker": "C:\\Users\\weron\\Pulpit\\Klinika\\src\\Klinika.Infrastructure\\AssemblyReference.cs",
               "RelativeDocumentMoniker": "src\\Klinika.Infrastructure\\AssemblyReference.cs",
-              "ToolTip": "C:\\Users\\weron\\Pulpit\\Klinika\\src\\Klinika.Infrastructure\\AssemblyReference.cs*",
-              "RelativeToolTip": "src\\Klinika.Infrastructure\\AssemblyReference.cs*",
+              "ToolTip": "C:\\Users\\weron\\Pulpit\\Klinika\\src\\Klinika.Infrastructure\\AssemblyReference.cs",
+              "RelativeToolTip": "src\\Klinika.Infrastructure\\AssemblyReference.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-30T23:44:14.48Z",
@@ -247,12 +451,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 24,
               "Title": "AssemblyReference.cs",
               "DocumentMoniker": "C:\\Users\\weron\\Pulpit\\Klinika\\src\\Klinika.Presentation\\AssemblyReference.cs",
               "RelativeDocumentMoniker": "src\\Klinika.Presentation\\AssemblyReference.cs",
-              "ToolTip": "C:\\Users\\weron\\Pulpit\\Klinika\\src\\Klinika.Presentation\\AssemblyReference.cs*",
-              "RelativeToolTip": "src\\Klinika.Presentation\\AssemblyReference.cs*",
+              "ToolTip": "C:\\Users\\weron\\Pulpit\\Klinika\\src\\Klinika.Presentation\\AssemblyReference.cs",
+              "RelativeToolTip": "src\\Klinika.Presentation\\AssemblyReference.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-30T23:21:46.214Z",
