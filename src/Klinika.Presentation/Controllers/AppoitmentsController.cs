@@ -12,6 +12,7 @@ using Klinika.Application.Appoitments.GetAppoitmentById;
 using Klinika.Application.Appoitments.UpdateAppoitment;
 using Klinika.Application.Appoitments.CreateAppoitment;
 using Klinika.Application.Appoitments.DeleteAppoitment;
+using Klinika.Application.Appoitments.CheckAppoitmentByDate;
 
 namespace Klinika.Presentation.Controllers
 {
@@ -64,23 +65,18 @@ namespace Klinika.Presentation.Controllers
             return Ok(result);
         }
 
-        // GET: api/Appoitments/Date
-        //[HttpGet("Date")]
-        //public IActionResult CheckDate(DateTime date)
-        //{
-        //    DayOfWeek day = date.DayOfWeek;
-        //    if (day == DayOfWeek.Saturday || day == DayOfWeek.Sunday)
-        //        return BadRequest("You cannot schedule an appoitment at weekend");
-
-        //    if (date.Hour > 15 || date.Hour < 8)
-        //        return BadRequest("Schedule an appoitment between 8 and 15");
-
-        //    Appoitment? app = _context.Appoitments.FirstOrDefault(a => a.Date.Hour == date.Hour);
-        //    if (app != null)
-        //        return BadRequest("There is already an appoitment on a given hour");
-
-        //    return Ok(true);
-        //}
+       // GET: api/Appoitments/Date
+       [HttpGet("Date")]
+        public async Task<IActionResult> CheckDate(DateTime date)
+        {
+            var query = new CheckAppoitmentByDateQuery(date);
+            var result = await _mediator.Send(query);
+            if (result == false)
+            {
+                return Ok(true);
+            }
+            return Ok(false);
+        }
 
         // PUT: api/Appoitments/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754

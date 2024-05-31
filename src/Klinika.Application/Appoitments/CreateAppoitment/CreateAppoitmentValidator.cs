@@ -1,5 +1,6 @@
 ﻿using FluentValidation;
 using Klinika.Application.Appoitments.CreateAppoitment;
+using Klinika.Application.Appoitments.CheckAppoitmentByDate;
 using Klinika.Domain.Repositories;
 
 public class CreateAppoitmentCommandValidator : AbstractValidator<CreateAppoitmentCommand>
@@ -12,18 +13,20 @@ public class CreateAppoitmentCommandValidator : AbstractValidator<CreateAppoitme
 
         RuleFor(x => x.Appoitment.Date)
             .Must(BeAValidDate)
-            .WithMessage("Appointments can only be scheduled between 8:00 and 15:00, on the hour, Monday to Friday.");
-            //.MustAsync(HaveNoConflictingAppointments)
-            //.WithMessage("There is already an appointment at the given hour.");
+            .WithMessage("Appointments can only be scheduled between 8:00 and 15:00, on the hour, Monday to Friday.")
+            .MustAsync(HaveNoConflictingAppointments)
+            .WithMessage("There is already an appointment at the given hour.");
     }
 
-    private static bool BeAValidDate(DateTime date)
+    private bool BeAValidDate(DateTime date)
     {
+        if (date < DateTime.Now)
+            return false; 
+
         if (date.Hour < 8 || date.Hour > 15)
             return false;
 
-        if (date.Minute != 0 || date.Second != 0 || date.Millisecond != 0
-            || date.Microsecond != 0 || date.Nanosecond != 0)
+        if (date.Minute != 0 || date.Second != 0 || date.Millisecond != 0 || date.Microsecond != 0 || date.Nanosecond != 0)
             return false;
 
         if (date.DayOfWeek == DayOfWeek.Saturday || date.DayOfWeek == DayOfWeek.Sunday)
@@ -32,10 +35,12 @@ public class CreateAppoitmentCommandValidator : AbstractValidator<CreateAppoitme
         return true;
     }
 
-    //private async Task<bool> HaveNoConflictingAppointments(DateTime date, CancellationToken cancellationToken)
-    //{
-    //    //var existingAppointment = await _appoitmentRepository.GetByDateAsync(date); // TODO
-    //    //return existingAppointment == null;
-    //    return true;
-    //}
+    private async Task<bool> HaveNoConflictingAppointments(DateTime date, CancellationToken cancellationToken)
+    {
+        var query = new CheckAppoitmentByDateQuery(date);
+        var handler = new CheckAppoitmentByIdQueryHandler(_appoitmentRepository);
+        var result = await handler.Handle(query, cancellationToken);
+
+        return result != true;
+    }
 }
