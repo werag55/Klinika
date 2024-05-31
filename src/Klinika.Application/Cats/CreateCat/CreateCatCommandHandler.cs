@@ -4,13 +4,13 @@ using MediatR;
 
 namespace Klinika.Application.Cats.CreateCat;
 
-public class CreateCatCommandHandler(ICatRepository CatRepository, IUnitOfWork unitOfWork) 
-    : IRequestHandler<CreateCatCommand, Cat>
+public class CreateClientCommandHandler(ICatRepository CatRepository, IUnitOfWork unitOfWork) 
+    : IRequestHandler<CreateClientCommand, Cat>
 {
     private readonly ICatRepository _CatRepository = CatRepository;
     private readonly IUnitOfWork _unitOfWork = unitOfWork;
 
-    public async Task<Cat> Handle(CreateCatCommand request, CancellationToken cancellationToken)
+    public async Task<Cat> Handle(CreateClientCommand request, CancellationToken cancellationToken)
     {
         _CatRepository.Add(request.Cat);
         await _unitOfWork.SaveChangesAsync();

@@ -3,7 +3,7 @@ using MediatR;
 
 namespace Klinika.Application.Cats.CreateCat;
 
-public class CreateCatCommand(Cat Cat) : IRequest<Cat>
+public class CreateClientCommand(Cat Cat) : IRequest<Cat>
 {
     public Cat Cat { get; } = Cat;
 }

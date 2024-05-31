@@ -15,4 +15,8 @@
     <ProjectReference Include="..\Klinika.Domain\Klinika.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Clients\Login\" />
+  </ItemGroup>
+
 </Project>

@@ -7,28 +7,28 @@ using Microsoft.AspNetCore.Mvc;
 using Klinika.Domain.Models;
 using Klinika.Domain.Repositories;
 using MediatR;
-using Klinika.Application.Cats.GetCats;
-using Klinika.Application.Cats.GetCatById;
-using Klinika.Application.Cats.UpdateCat;
-using Klinika.Application.Cats.CreateCat;
-using Klinika.Application.Cats.DeleteCat;
+using Klinika.Application.Clients.GetClients;
+using Klinika.Application.Clients.GetClientById;
+using Klinika.Application.Clients.UpdateClient;
+using Klinika.Application.Clients.CreateClient;
+using Klinika.Application.Clients.DeleteClient;
 
 namespace Klinika.Presentation.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CatsController : ControllerBase
+    public class ClientsController : ControllerBase
     {
         private readonly IMediator _mediator;
 
-        public CatsController(IMediator mediator) =>
+        public ClientsController(IMediator mediator) =>
             _mediator = mediator;
 
-        // GET: api/Cats
+        // GET: api/Clients
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Cat>>> GetCats([FromQuery] int page = 1, [FromQuery] int pageSize = 10)
+        public async Task<ActionResult<IEnumerable<Client>>> GetClients([FromQuery] int page = 1, [FromQuery] int pageSize = 10)
         {
-            //var query = _context.Cats.AsQueryable();
+            //var query = _context.Clients.AsQueryable();
 
             //var totalCount = query.Count();
             //var totalPages = (int)Math.Ceiling((double)totalCount / pageSize);
@@ -51,9 +51,9 @@ namespace Klinika.Presentation.Controllers
             return Ok(result);
         }
 
-        // GET: api/Cats/5
+        // GET: api/Clients/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Cat>> GetCat(int id)
+        public async Task<ActionResult<Client>> GetClient(int id)
         {
             var query = new GetClientByIdQuery(id);
             var result = await _mediator.Send(query);
@@ -65,34 +65,34 @@ namespace Klinika.Presentation.Controllers
         }
 
 
-        // PUT: api/Cats/5
+        // PUT: api/Clients/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutCat(int id, Cat cat)
+        public async Task<IActionResult> PutClient(int id, Client Client)
         {
-            if (id != cat.Id)
+            if (id != Client.Id)
             {
                 return BadRequest();
             }
 
-            var command = new UpdateClientCommand(id, cat);
+            var command = new UpdateClientCommand(id, Client);
             await _mediator.Send(command);
             return NoContent();
         }
 
-        // POST: api/Cats
+        // POST: api/Clients
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Cat>> PostCat(Cat cat)
+        public async Task<ActionResult<Client>> PostClient(Client Client)
         {
-            var command = new CreateClientCommand(cat);
+            var command = new CreateClientCommand(Client);
             var result = await _mediator.Send(command);
-            return CreatedAtAction("GetCat", new { id = result.Id }, result);
+            return CreatedAtAction("GetClient", new { id = result.Id }, result);
         }
 
-        // DELETE: api/Cats/5
+        // DELETE: api/Clients/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteCat(int id)
+        public async Task<IActionResult> DeleteClient(int id)
         {
             var command = new DeleteClientCommand(id);
             await _mediator.Send(command);

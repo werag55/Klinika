@@ -4,18 +4,18 @@ using MediatR;
 
 namespace Klinika.Application.Cats.DeleteCat;
 
-public class DeleteCatCommandHandler : IRequestHandler<DeleteCatCommand, Cat>
+public class DeleteClientCommandHandler : IRequestHandler<DeleteClientCommand, Cat>
 {
     private readonly ICatRepository _CatRepository;
     private readonly IUnitOfWork _unitOfWork;
 
-    public DeleteCatCommandHandler(ICatRepository CatRepository, IUnitOfWork unitOfWork)
+    public DeleteClientCommandHandler(ICatRepository CatRepository, IUnitOfWork unitOfWork)
     {
         _CatRepository = CatRepository;
         _unitOfWork = unitOfWork;
     }
 
-    public async Task<Cat> Handle(DeleteCatCommand request, CancellationToken cancellationToken)
+    public async Task<Cat> Handle(DeleteClientCommand request, CancellationToken cancellationToken)
     {
         var Cat = await _CatRepository.GetByIdAsync(request.Id);
         if (Cat != null)
