@@ -7,14 +7,9 @@ using Klinika.Domain.Repositories;
 
 namespace Klinika.Application.Requests
 {
-    public class GetAppointmentsQueryHandler : IRequestHandler<GetAppointmentsQuery, IEnumerable<Appoitment>>
+    public class GetAppointmentsQueryHandler(IAppoitmentRepository appointmentRepository) : IRequestHandler<GetAppointmentsQuery, IEnumerable<Appoitment>>
     {
-        private readonly IAppoitmentRepository _appointmentRepository;
-
-        public GetAppointmentsQueryHandler(IAppoitmentRepository appointmentRepository)
-        {
-            _appointmentRepository = appointmentRepository;
-        }
+        private readonly IAppoitmentRepository _appointmentRepository = appointmentRepository;
 
         public async Task<IEnumerable<Appoitment>> Handle(GetAppointmentsQuery request, CancellationToken cancellationToken)
         {

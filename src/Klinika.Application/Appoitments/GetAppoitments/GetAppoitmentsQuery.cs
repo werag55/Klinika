@@ -4,15 +4,9 @@ using Klinika.Domain.Models;
 
 namespace Klinika.Application.Requests
 {
-    public class GetAppointmentsQuery : IRequest<IEnumerable<Appoitment>>
+    public class GetAppointmentsQuery(int page, int pageSize) : IRequest<IEnumerable<Appoitment>>
     {
-        public int Page { get; }
-        public int PageSize { get; }
-
-        public GetAppointmentsQuery(int page, int pageSize)
-        {
-            Page = page;
-            PageSize = pageSize;
-        }
+        public int Page { get; } = page;
+        public int PageSize { get; } = pageSize;
     }
 }

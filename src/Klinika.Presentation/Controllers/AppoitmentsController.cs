@@ -8,6 +8,10 @@ using Klinika.Domain.Models;
 using Klinika.Domain.Repositories;
 using MediatR;
 using Klinika.Application.Requests;
+using Klinika.Application.Appoitments.GetAppoitmentById;
+using Klinika.Application.Appoitments.UpdateAppoitment;
+using Klinika.Application.Appoitments.CreateAppoitment;
+using Klinika.Application.Appoitments.DeleteAppoitment;
 
 namespace Klinika.Presentation.Controllers
 {
@@ -15,16 +19,10 @@ namespace Klinika.Presentation.Controllers
     [ApiController]
     public class AppoitmentsController : ControllerBase
     {
-        private readonly IAppoitmentRepository _appoitmentRepository;
-        private readonly IUnitOfWork _unitOfWork;
         private readonly IMediator _mediator;
 
-        public AppoitmentsController(IAppoitmentRepository appoitmentRepository,IUnitOfWork unitOfWork,IMediator mediator)
-        {
-            _appoitmentRepository = appoitmentRepository;
-            _unitOfWork = unitOfWork;
+        public AppoitmentsController(IMediator mediator) =>
             _mediator = mediator;
-        }
 
         // GET: api/Appoitments
         [HttpGet]
@@ -47,8 +45,7 @@ namespace Klinika.Presentation.Controllers
             //};
 
             //return Ok(result);
-            ////return await _context.Appoitments.ToListAsync();
-            //return await _appoitmentRepository.GetAllAsync();
+
             var query = new GetAppointmentsQuery(page, pageSize);
             var result = await _mediator.Send(query);
             return Ok(result);
@@ -58,14 +55,13 @@ namespace Klinika.Presentation.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Appoitment>> GetAppoitment(int id)
         {
-            var appoitment = await _appoitmentRepository.GetByIdAsync(id);
-
-            if (appoitment == null)
+            var query = new GetAppoitmentByIdQuery(id);
+            var result = await _mediator.Send(query);
+            if (result == null)
             {
                 return NotFound();
             }
-
-            return appoitment;
+            return Ok(result);
         }
 
         // GET: api/Appoitments/Date
@@ -96,38 +92,8 @@ namespace Klinika.Presentation.Controllers
                 return BadRequest();
             }
 
-            //DayOfWeek day = appoitment.Date.DayOfWeek;
-            //if (day == DayOfWeek.Saturday || day == DayOfWeek.Sunday)
-            //    return BadRequest("You cannot schedule an appoitment at weekend");
-
-            //if (appoitment.Date.Hour > 15 || appoitment.Date.Hour < 8)
-            //    return BadRequest("Schedule an appoitment between 8 and 15");
-
-            //Appoitment? app = _context.Appoitments.FirstOrDefault(a => a.Date.Hour == appoitment.Date.Hour);
-            //if (app != null)
-            //    return BadRequest("There is already an appoitment on a given hour");
-
-            //_context.Entry(appoitment).State = EntityState.Modified;
-
-            _appoitmentRepository.Update(appoitment);
-            await _unitOfWork.SaveChangesAsync();
-
-            //try
-            //{
-            //    await _context.SaveChangesAsync();
-            //}
-            //catch (DbUpdateConcurrencyException)
-            //{
-            //    if (!AppoitmentExists(id))
-            //    {
-            //        return NotFound();
-            //    }
-            //    else
-            //    {
-            //        throw;
-            //    }
-            //}
-
+            var command = new UpdateAppoitmentCommand(id, appoitment);
+            await _mediator.Send(command);
             return NoContent();
         }
 
@@ -136,36 +102,17 @@ namespace Klinika.Presentation.Controllers
         [HttpPost]
         public async Task<ActionResult<Appoitment>> PostAppoitment(Appoitment appoitment)
         {
-            //DayOfWeek day = appoitment.Date.DayOfWeek;
-            //if (day == DayOfWeek.Saturday || day == DayOfWeek.Sunday)
-            //    return BadRequest("You cannot schedule an appoitment at weekend");
-
-            //if (appoitment.Date.Hour > 15 || appoitment.Date.Hour < 8)
-            //    return BadRequest("Schedule an appoitment between 8 and 15");
-
-            //Appoitment? app = _context.Appoitments.FirstOrDefault(a => a.Date.Hour == appoitment.Date.Hour);
-            //if (app != null)
-            //    return BadRequest("There is already an appoitment on a given hour");
-
-            _appoitmentRepository.Add(appoitment);
-            await _unitOfWork.SaveChangesAsync();
-
-            return CreatedAtAction("GetAppoitment", new { id = appoitment.Id }, appoitment);
+            var command = new CreateAppoitmentCommand(appoitment);
+            var result = await _mediator.Send(command);
+            return CreatedAtAction("GetAppoitment", new { id = result.Id }, result);
         }
 
         // DELETE: api/Appoitments/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteAppoitment(int id)
         {
-            var appoitment = await _appoitmentRepository.GetByIdAsync(id);
-            if (appoitment == null)
-            {
-                return NotFound();
-            }
-
-            _appoitmentRepository.Remove(appoitment);
-            await _unitOfWork.SaveChangesAsync();
-
+            var command = new DeleteAppoitmentCommand(id);
+            await _mediator.Send(command);
             return NoContent();
         }
     }
