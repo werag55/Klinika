@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Klinika.Domain.Models;
 using Klinika.Domain.Repositories;
+using MediatR;
+using Klinika.Application.Requests;
 
 namespace Klinika.Presentation.Controllers
 {
@@ -15,11 +17,13 @@ namespace Klinika.Presentation.Controllers
     {
         private readonly IAppoitmentRepository _appoitmentRepository;
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IMediator _mediator;
 
-        public AppoitmentsController(IAppoitmentRepository appoitmentRepository,IUnitOfWork unitOfWork)
+        public AppoitmentsController(IAppoitmentRepository appoitmentRepository,IUnitOfWork unitOfWork,IMediator mediator)
         {
             _appoitmentRepository = appoitmentRepository;
             _unitOfWork = unitOfWork;
+            _mediator = mediator;
         }
 
         // GET: api/Appoitments
@@ -44,7 +48,10 @@ namespace Klinika.Presentation.Controllers
 
             //return Ok(result);
             ////return await _context.Appoitments.ToListAsync();
-            return await _appoitmentRepository.GetAllAsync();
+            //return await _appoitmentRepository.GetAllAsync();
+            var query = new GetAppointmentsQuery(page, pageSize);
+            var result = await _mediator.Send(query);
+            return Ok(result);
         }
 
         // GET: api/Appoitments/5

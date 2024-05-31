@@ -21,10 +21,10 @@ namespace Klinika.Infrastructure.EntityTypeConfiguration
                 .HasForeignKey(e => e.CatId)
                 .IsRequired();
 
-            builder.HasOne(e => e.Client)
-                .WithMany()
-                .HasForeignKey(e => e.ClientId)
-                .IsRequired();
+            //builder.HasOne(e => e.Client)
+            //    .WithMany()
+            //    .HasForeignKey(e => e.ClientId)
+            //    .IsRequired();
         }
     }
 }
