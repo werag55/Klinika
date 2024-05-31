@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Klinika.Domain.Models;
 using Klinika.Domain.Repositories;
 using MediatR;
-using Klinika.Application.Requests;
+using Klinika.Application.Appoitments.GetAppoitments;
 using Klinika.Application.Appoitments.GetAppoitmentById;
 using Klinika.Application.Appoitments.UpdateAppoitment;
 using Klinika.Application.Appoitments.CreateAppoitment;
@@ -46,7 +46,7 @@ namespace Klinika.Presentation.Controllers
 
             //return Ok(result);
 
-            var query = new GetAppointmentsQuery(page, pageSize);
+            var query = new GetAppoitmentsQuery(page, pageSize);
             var result = await _mediator.Send(query);
             return Ok(result);
         }

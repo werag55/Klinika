@@ -5,16 +5,16 @@ using MediatR;
 using Klinika.Domain.Models;
 using Klinika.Domain.Repositories;
 
-namespace Klinika.Application.Requests
-{
-    public class GetAppointmentsQueryHandler(IAppoitmentRepository appointmentRepository) : IRequestHandler<GetAppointmentsQuery, IEnumerable<Appoitment>>
-    {
-        private readonly IAppoitmentRepository _appointmentRepository = appointmentRepository;
+namespace Klinika.Application.Appoitments.GetAppoitments;
 
-        public async Task<IEnumerable<Appoitment>> Handle(GetAppointmentsQuery request, CancellationToken cancellationToken)
-        {
-            return await _appointmentRepository.GetAllAsync();
-        }
+public class GetAppoitmentsQueryHandler(IAppoitmentRepository appoitmentRepository) : IRequestHandler<GetAppoitmentsQuery, IEnumerable<Appoitment>>
+{
+    private readonly IAppoitmentRepository _appoitmentRepository = appoitmentRepository;
+
+    public async Task<IEnumerable<Appoitment>> Handle(GetAppoitmentsQuery request, CancellationToken cancellationToken)
+    {
+        return await _appoitmentRepository.GetAllAsync();
     }
 }
+
 
