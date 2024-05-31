@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 
-namespace Klinika.Infrastructure;
+namespace Klinika.Application;
 
 public static class AssemblyReference
 {
