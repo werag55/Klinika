@@ -16,13 +16,18 @@ internal sealed class ClientRepository : IClientRepository
 
     public async Task<List<Client>> GetAllAsync(CancellationToken cancellationToken = default) =>
         await _dbContext
-                .Set<Client>()
+                .Set<Client>().Include(client => client.Cats)
                 .ToListAsync(cancellationToken);
 
     public async Task<Client?> GetByIdAsync(int id, CancellationToken cancellationToken = default) =>
         await _dbContext
                 .Set<Client>().Include(client => client.Cats)
                 .FirstOrDefaultAsync(member => member.Id == id, cancellationToken);
+
+    public async Task<Client?> GetByUserNameAsync(string userName, CancellationToken cancellationToken = default) =>
+        await _dbContext
+                .Set<Client>().Include(client => client.Cats)
+                .FirstOrDefaultAsync(member => member.UserName == userName, cancellationToken);
 
     public void Remove(Client Client) =>
         _dbContext.Set<Client>().Remove(Client);

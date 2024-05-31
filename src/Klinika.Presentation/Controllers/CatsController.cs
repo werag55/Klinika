@@ -12,6 +12,7 @@ using Klinika.Application.Cats.GetCatById;
 using Klinika.Application.Cats.UpdateCat;
 using Klinika.Application.Cats.CreateCat;
 using Klinika.Application.Cats.DeleteCat;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Klinika.Presentation.Controllers
 {
@@ -83,6 +84,7 @@ namespace Klinika.Presentation.Controllers
         // POST: api/Cats
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
+        [Authorize]
         public async Task<ActionResult<Cat>> PostCat(Cat cat)
         {
             var command = new CreateClientCommand(cat);

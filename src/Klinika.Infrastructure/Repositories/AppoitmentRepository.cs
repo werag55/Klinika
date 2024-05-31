@@ -16,17 +16,17 @@ internal sealed class AppoitmentRepository : IAppoitmentRepository
 
     public async Task<List<Appoitment>> GetAllAsync(CancellationToken cancellationToken = default) =>
         await _dbContext
-                .Set<Appoitment>()
+                .Set<Appoitment>().Include(client => client.Cat).Include(client => client.Client)
                 .ToListAsync(cancellationToken);
 
     public async Task<Appoitment?> GetByDateAsync(DateTime date, CancellationToken cancellationToken = default) =>
         await _dbContext
-                .Set<Appoitment>()
+                .Set<Appoitment>().Include(client => client.Cat).Include(client => client.Client)
                 .FirstOrDefaultAsync(member => member.Date.Date == date.Date && member.Date.Hour == date.Hour, cancellationToken);
 
     public async Task<Appoitment?> GetByIdAsync(int id, CancellationToken cancellationToken = default) =>
         await _dbContext
-                .Set<Appoitment>()
+                .Set<Appoitment>().Include(client => client.Cat).Include(client => client.Client)
                 .FirstOrDefaultAsync(member => member.Id == id, cancellationToken);
 
     public void Remove(Appoitment Appoitment) =>

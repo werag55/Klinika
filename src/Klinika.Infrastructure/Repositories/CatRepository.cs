@@ -16,12 +16,12 @@ internal sealed class CatRepository : ICatRepository
 
     public async Task<List<Cat>> GetAllAsync(CancellationToken cancellationToken = default) =>
         await _dbContext
-                .Set<Cat>()
+                .Set<Cat>().Include(client => client.Owners)
                 .ToListAsync(cancellationToken);
 
     public async Task<Cat?> GetByIdAsync(int id, CancellationToken cancellationToken = default) =>
         await _dbContext
-                .Set<Cat>()
+                .Set<Cat>().Include(client => client.Owners)
                 .FirstOrDefaultAsync(member => member.Id == id, cancellationToken);
 
     public void Remove(Cat cat) =>

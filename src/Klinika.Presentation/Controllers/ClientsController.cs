@@ -12,6 +12,8 @@ using Klinika.Application.Clients.GetClientById;
 using Klinika.Application.Clients.UpdateClient;
 using Klinika.Application.Clients.CreateClient;
 using Klinika.Application.Clients.DeleteClient;
+using Klinika.Application.Clients.Login;
+using System.Security.Authentication;
 
 namespace Klinika.Presentation.Controllers
 {
@@ -97,6 +99,23 @@ namespace Klinika.Presentation.Controllers
             var command = new DeleteClientCommand(id);
             await _mediator.Send(command);
             return NoContent();
+        }
+
+        [HttpPost("Login")]
+        public async Task<IActionResult> LoginClient([FromBody] string userName)
+        {
+            try
+            {
+                var command = new LoginCommand(userName);
+                var result = await _mediator.Send(command);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                if (ex.InnerException is InvalidCredentialException)
+                    return BadRequest("Invalid user name");
+            }
+            return BadRequest();
         }
     }
 }
