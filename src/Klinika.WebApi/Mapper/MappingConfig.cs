@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Klinika.DTO;
-using Klinika.Models;
+using Klinika.Domain.Models;
 
 namespace Klinika.Mapper
 {

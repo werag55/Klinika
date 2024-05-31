@@ -4,9 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Klinika.Data;
-using Klinika.Models;
+using Klinika.Domain.Models;
+using Klinika.Domain.Repositories;
 
 namespace Klinika.Controllers
 {
@@ -14,61 +13,48 @@ namespace Klinika.Controllers
     [ApiController]
     public class CatsController : ControllerBase
     {
-        private readonly AppDbContext _context;
+        private readonly ICatRepository _CatRepository;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public CatsController(AppDbContext context)
+        public CatsController(ICatRepository CatRepository, IUnitOfWork unitOfWork)
         {
-            _context = context;
+            _CatRepository = CatRepository;
+            _unitOfWork = unitOfWork;
         }
 
         // GET: api/Cats
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Cat>>> GetCats()
+        public async Task<ActionResult<IEnumerable<Cat>>> GetCats([FromQuery] int page = 1, [FromQuery] int pageSize = 10)
         {
-            return await _context.Cats.ToListAsync();
+            return await _CatRepository.GetAllAsync();
         }
 
         // GET: api/Cats/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Cat>> GetCat(int id)
         {
-            var cat = await _context.Cats.FindAsync(id);
+            var Cat = await _CatRepository.GetByIdAsync(id);
 
-            if (cat == null)
+            if (Cat == null)
             {
                 return NotFound();
             }
 
-            return cat;
+            return Cat;
         }
 
         // PUT: api/Cats/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutCat(int id, Cat cat)
+        public async Task<IActionResult> PutCat(int id, Cat Cat)
         {
-            if (id != cat.Id)
+            if (id != Cat.Id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(cat).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!CatExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+            _CatRepository.Update(Cat);
+            await _unitOfWork.SaveChangesAsync();
 
             return NoContent();
         }
@@ -76,33 +62,28 @@ namespace Klinika.Controllers
         // POST: api/Cats
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Cat>> PostCat(Cat cat)
+        public async Task<ActionResult<Cat>> PostCat(Cat Cat)
         {
-            _context.Cats.Add(cat);
-            await _context.SaveChangesAsync();
+            _CatRepository.Add(Cat);
+            await _unitOfWork.SaveChangesAsync();
 
-            return CreatedAtAction("GetCat", new { id = cat.Id }, cat);
+            return CreatedAtAction("GetCat", new { id = Cat.Id }, Cat);
         }
 
         // DELETE: api/Cats/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCat(int id)
         {
-            var cat = await _context.Cats.FindAsync(id);
-            if (cat == null)
+            var Cat = await _CatRepository.GetByIdAsync(id);
+            if (Cat == null)
             {
                 return NotFound();
             }
 
-            _context.Cats.Remove(cat);
-            await _context.SaveChangesAsync();
+            _CatRepository.Remove(Cat);
+            await _unitOfWork.SaveChangesAsync();
 
             return NoContent();
-        }
-
-        private bool CatExists(int id)
-        {
-            return _context.Cats.Any(e => e.Id == id);
         }
     }
 }
