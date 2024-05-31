@@ -9,6 +9,8 @@ public interface IAppoitmentRepository
 
     Task<Appoitment?> GetByIdAsync(int id, CancellationToken cancellationToken = default);
 
+    Task<Appoitment?> GetByDateAsync (DateTime date, CancellationToken cancellationToken = default);
+
     void Add(Appoitment Appoitment);
     void Update(Appoitment Appoitment);
     void Remove(Appoitment Appoitment);

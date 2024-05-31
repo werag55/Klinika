@@ -6,6 +6,8 @@ using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 using Scrutor;
+using Klinika.Application.Behaviours;
+using FluentValidation;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -34,9 +36,16 @@ builder
 
 builder.Services.AddMediatR(config => config.RegisterServicesFromAssembly(Klinika.Application.AssemblyReference.Assembly));
 
+builder.Services.AddScoped(typeof(IPipelineBehavior<,>), typeof(ValidationBehaviour<,>));
+
+builder.Services.AddValidatorsFromAssembly(
+    Klinika.Application.AssemblyReference.Assembly,
+    includeInternalTypes: true);
+
 IConfiguration configuration = builder.Configuration.AddJsonFile("appsettings.json").AddEnvironmentVariables().Build();
 
 builder.Services.AddControllers()
+    .AddApplicationPart(Klinika.Presentation.AssemblyReference.Assembly)
     .AddJsonOptions(options =>
     {
         options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.Preserve;

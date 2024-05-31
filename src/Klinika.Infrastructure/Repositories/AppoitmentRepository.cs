@@ -19,6 +19,11 @@ internal sealed class AppoitmentRepository : IAppoitmentRepository
                 .Set<Appoitment>()
                 .ToListAsync(cancellationToken);
 
+    public async Task<Appoitment?> GetByDateAsync(DateTime date, CancellationToken cancellationToken = default) =>
+        await _dbContext
+                .Set<Appoitment>()
+                .FirstOrDefaultAsync(member => member.Date.Date == date.Date && member.Date.Hour == date.Hour, cancellationToken);
+
     public async Task<Appoitment?> GetByIdAsync(int id, CancellationToken cancellationToken = default) =>
         await _dbContext
                 .Set<Appoitment>()
