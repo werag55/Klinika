@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace Klinika.Application.Cats.GetCatById;
 
-public class GetClientByIdQueryHandler(ICatRepository CatRepository) : IRequestHandler<GetClientByIdQuery, Cat>
+public class GetCatByIdQueryHandler(ICatRepository CatRepository) : IRequestHandler<GetCatByIdQuery, Cat>
 {
     private readonly ICatRepository _CatRepository = CatRepository;
 
-    public async Task<Cat> Handle(GetClientByIdQuery request, CancellationToken cancellationToken)
+    public async Task<Cat> Handle(GetCatByIdQuery request, CancellationToken cancellationToken)
     {
         return await _CatRepository.GetByIdAsync(request.Id) ?? throw new Exception("Cat not found for the given id.");
     }

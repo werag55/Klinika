@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Klinika.Domain.Models;
 using Klinika.Domain.Repositories;
 using MediatR;
@@ -13,6 +8,7 @@ using Klinika.Application.Cats.UpdateCat;
 using Klinika.Application.Cats.CreateCat;
 using Klinika.Application.Cats.DeleteCat;
 using Microsoft.AspNetCore.Authorization;
+using System.IdentityModel.Tokens.Jwt;
 
 namespace Klinika.Presentation.Controllers
 {
@@ -47,7 +43,7 @@ namespace Klinika.Presentation.Controllers
 
             //return Ok(result);
 
-            var query = new GetClientsQuery(page, pageSize);
+            var query = new GetCatsQuery(page, pageSize);
             var result = await _mediator.Send(query);
             return Ok(result);
         }
@@ -56,7 +52,7 @@ namespace Klinika.Presentation.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Cat>> GetCat(int id)
         {
-            var query = new GetClientByIdQuery(id);
+            var query = new GetCatByIdQuery(id);
             var result = await _mediator.Send(query);
             if (result == null)
             {
@@ -76,7 +72,7 @@ namespace Klinika.Presentation.Controllers
                 return BadRequest();
             }
 
-            var command = new UpdateClientCommand(id, cat);
+            var command = new UpdateCatCommand(id, cat);
             await _mediator.Send(command);
             return NoContent();
         }
@@ -87,7 +83,9 @@ namespace Klinika.Presentation.Controllers
         [Authorize]
         public async Task<ActionResult<Cat>> PostCat(Cat cat)
         {
-            var command = new CreateClientCommand(cat);
+            var userName = User.FindFirst(JwtRegisteredClaimNames.UniqueName)?.Value;
+
+            var command = new CreateCatCommand(cat);
             var result = await _mediator.Send(command);
             return CreatedAtAction("GetCat", new { id = result.Id }, result);
         }
@@ -96,7 +94,7 @@ namespace Klinika.Presentation.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCat(int id)
         {
-            var command = new DeleteClientCommand(id);
+            var command = new DeleteCatCommand(id);
             await _mediator.Send(command);
             return NoContent();
         }
