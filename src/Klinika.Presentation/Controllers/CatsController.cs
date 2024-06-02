@@ -1,15 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Klinika.Domain.Models;
-using Klinika.Domain.Repositories;
 using MediatR;
 using Klinika.Application.Cats.GetCats;
-using Klinika.Application.Cats.GetCatById;
+using Klinika.Application.Cats.GetCatByGuid;
 using Klinika.Application.Cats.UpdateCat;
 using Klinika.Application.Cats.CreateCat;
 using Klinika.Application.Cats.DeleteCat;
 using Microsoft.AspNetCore.Authorization;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
+using Klinika.Application.Cats.CatsDTO;
 
 namespace Klinika.Presentation.Controllers
 {
@@ -24,7 +23,7 @@ namespace Klinika.Presentation.Controllers
 
         // GET: api/Cats
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Cat>>> GetCats([FromQuery] int page = 1, [FromQuery] int pageSize = 10)
+        public async Task<ActionResult<IEnumerable<GetCatDTO>>> GetCats([FromQuery] int page = 1, [FromQuery] int pageSize = 10)
         {
             //var query = _context.Cats.AsQueryable();
 
@@ -50,10 +49,10 @@ namespace Klinika.Presentation.Controllers
         }
 
         // GET: api/Cats/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Cat>> GetCat(int id)
+        [HttpGet("{guid}")]
+        public async Task<ActionResult<GetCatDTO>> GetCat(string guid)
         {
-            var query = new GetCatByIdQuery(id);
+            var query = new GetCatByGuidQuery(guid);
             var result = await _mediator.Send(query);
             if (result == null)
             {
@@ -65,15 +64,10 @@ namespace Klinika.Presentation.Controllers
 
         // PUT: api/Cats/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutCat(int id, Cat cat)
+        [HttpPut("{guid}")]
+        public async Task<IActionResult> PutCat(string guid, UpsertCatDTO cat)
         {
-            if (id != cat.Id)
-            {
-                return BadRequest();
-            }
-
-            var command = new UpdateCatCommand(id, cat);
+             var command = new UpdateCatCommand(guid, cat);
             await _mediator.Send(command);
             return NoContent();
         }
@@ -82,20 +76,20 @@ namespace Klinika.Presentation.Controllers
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         [Authorize]
-        public async Task<ActionResult<Cat>> PostCat(Cat cat)
+        public async Task<ActionResult<GetCatDTO>> PostCat(UpsertCatDTO cat)
         {
             var userName = User.FindFirst(ClaimTypes.Name)?.Value;
 
             var command = new CreateCatCommand(cat);
             var result = await _mediator.Send(command);
-            return CreatedAtAction("GetCat", new { id = result.Id }, result);
+            return CreatedAtAction("GetCat", new { guid = result.Guid }, result);
         }
 
         // DELETE: api/Cats/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteCat(int id)
+        [HttpDelete("{guid}")]
+        public async Task<IActionResult> DeleteCat(string guid)
         {
-            var command = new DeleteCatCommand(id);
+            var command = new DeleteCatCommand(guid);
             await _mediator.Send(command);
             return NoContent();
         }

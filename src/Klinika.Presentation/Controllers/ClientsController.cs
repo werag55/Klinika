@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Klinika.Domain.Models;
-using Klinika.Domain.Repositories;
+﻿using Microsoft.AspNetCore.Mvc;
 using MediatR;
 using Klinika.Application.Clients.GetClients;
 using Klinika.Application.Clients.GetClientByUserName;
@@ -71,12 +64,8 @@ namespace Klinika.Presentation.Controllers
         // PUT: api/Clients/JanKowalski
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{userName}")]
-        public async Task<IActionResult> PutClient(string userName, [FromBody] UpsertClientDTO Client)
+        public async Task<IActionResult> PutClient(string userName, [FromBody] UpdateClientDTO Client)
         {
-            if (userName != Client.UserName)
-            {
-                return BadRequest();
-            }
 
             var command = new UpdateClientCommand(userName, Client);
             await _mediator.Send(command);
@@ -86,7 +75,7 @@ namespace Klinika.Presentation.Controllers
         // POST: api/Clients
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Client>> PostClient([FromBody] UpsertClientDTO Client)
+        public async Task<ActionResult<GetClientDTO>> PostClient([FromBody] CreateClientDTO Client)
         {
             var command = new CreateClientCommand(Client);
             var result = await _mediator.Send(command);

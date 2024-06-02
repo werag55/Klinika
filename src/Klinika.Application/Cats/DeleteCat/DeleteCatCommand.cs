@@ -3,8 +3,8 @@ using MediatR;
 
 namespace Klinika.Application.Cats.DeleteCat;
 
-public class DeleteCatCommand(int id) : IRequest<Cat>
+public class DeleteCatCommand(string guid) : IRequest<Cat>
 {
-    public int Id { get; } = id;
+    public string Guid { get; } = guid;
 }
 

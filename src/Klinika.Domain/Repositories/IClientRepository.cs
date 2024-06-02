@@ -7,7 +7,7 @@ public interface IClientRepository
 {
     Task<List<Client>> GetAllAsync(CancellationToken cancellationToken = default);
 
-    Task<Client?> GetByIdAsync(int id, CancellationToken cancellationToken = default);
+    Task<Client?> GetByGuidAsync(string guid, CancellationToken cancellationToken = default);
 
     Task<Client?> GetByUserNameAsync(string userName, CancellationToken cancellationToken = default);
 

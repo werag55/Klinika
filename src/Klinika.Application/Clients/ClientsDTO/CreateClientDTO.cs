@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Klinika.Application.Cats.CatsDTO;
+namespace Klinika.Application.Clients.ClientsDTO;
 
-public sealed record UpsertCatDTO(
+public sealed record CreateClientDTO(
+    string UserName,
     string Name,
-    int Age,
-    string Color,
-    List<string>? OwnersUserNames
+    string Surname
     );
+

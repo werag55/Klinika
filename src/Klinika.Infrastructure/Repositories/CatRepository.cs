@@ -19,10 +19,10 @@ internal sealed class CatRepository : ICatRepository
                 .Set<Cat>().Include(client => client.Owners)
                 .ToListAsync(cancellationToken);
 
-    public async Task<Cat?> GetByIdAsync(int id, CancellationToken cancellationToken = default) =>
+    public async Task<Cat?> GetByGuidAsync(string guid, CancellationToken cancellationToken = default) =>
         await _dbContext
                 .Set<Cat>().Include(client => client.Owners)
-                .FirstOrDefaultAsync(member => member.Id == id, cancellationToken);
+                .FirstOrDefaultAsync(member => member.Guid.ToString() == guid, cancellationToken);
 
     public void Remove(Cat cat) =>
         _dbContext.Set<Cat>().Remove(cat);

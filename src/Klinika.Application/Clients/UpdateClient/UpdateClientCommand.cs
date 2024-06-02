@@ -3,8 +3,8 @@ using MediatR;
 
 namespace Klinika.Application.Clients.UpdateClient;
 
-public class UpdateClientCommand(string UserName, UpsertClientDTO Client) : IRequest<UpsertClientDTO>
+public class UpdateClientCommand(string UserName, UpdateClientDTO Client) : IRequest<GetClientDTO>
 {
     public string UserName { get; } = UserName;
-    public UpsertClientDTO Client { get; } = Client;
+    public UpdateClientDTO Client { get; } = Client;
 }

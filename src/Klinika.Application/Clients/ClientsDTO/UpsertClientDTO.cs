@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace Klinika.Application.Clients.ClientsDTO;
 
-public sealed record UpsertClientDTO(
-    string UserName,
+public sealed record UpdateClientDTO(
     string Name,
     string Surname
     );

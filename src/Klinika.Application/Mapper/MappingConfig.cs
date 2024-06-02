@@ -12,7 +12,12 @@ namespace Klinika.Mapper
         {
             CreateMap<Client, GetClientDTO>();
             CreateMap<Cat, GetClientCatDTO>();
-            CreateMap<UpsertClientDTO, Client>()
+            CreateMap<CreateClientDTO, Client>()
+                .ForMember(dest => dest.Guid, opt => opt.MapFrom(src => Guid.NewGuid()));
+
+            CreateMap<Cat, GetCatDTO>();
+            CreateMap<Client, GetCatClientDTO>();
+            CreateMap<UpsertCatDTO, Cat>()
                 .ForMember(dest => dest.Guid, opt => opt.MapFrom(src => Guid.NewGuid()));
         }
     }

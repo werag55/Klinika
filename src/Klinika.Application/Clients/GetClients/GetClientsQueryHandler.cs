@@ -12,7 +12,7 @@ public class GetClientQueryHandler(IClientRepository ClientRepository, IMapper M
 
     public async Task<IEnumerable<GetClientDTO>> Handle(GetClientsQuery request, CancellationToken cancellationToken)
     {
-        return _Mapper.Map<List<GetClientDTO>>(await _ClientRepository.GetAllAsync());
+        return _Mapper.Map<List<GetClientDTO>>(await _ClientRepository.GetAllAsync(cancellationToken));
     }
 }
 

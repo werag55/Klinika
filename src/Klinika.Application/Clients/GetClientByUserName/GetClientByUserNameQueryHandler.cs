@@ -18,7 +18,7 @@ public class GetClientByUserNameQueryHandler(IClientRepository ClientRepository,
 
     public async Task<GetClientDTO> Handle(GetClientByUserNameQuery request, CancellationToken cancellationToken)
     {
-        return _Mapper.Map<GetClientDTO>(await _ClientRepository.GetByUserNameAsync(request.UserName))
+        return _Mapper.Map<GetClientDTO>(await _ClientRepository.GetByUserNameAsync(request.UserName, cancellationToken))
             ?? throw new Exception("Client not found for the given User Name.");
     }
 }

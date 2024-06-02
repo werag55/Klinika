@@ -19,10 +19,10 @@ internal sealed class ClientRepository : IClientRepository
                 .Set<Client>().Include(client => client.Cats)
                 .ToListAsync(cancellationToken);
 
-    public async Task<Client?> GetByIdAsync(int id, CancellationToken cancellationToken = default) =>
+    public async Task<Client?> GetByGuidAsync(string guid, CancellationToken cancellationToken = default) =>
         await _dbContext
                 .Set<Client>().Include(client => client.Cats)
-                .FirstOrDefaultAsync(member => member.Id == id, cancellationToken);
+                .FirstOrDefaultAsync(member => member.Guid.ToString() == guid, cancellationToken);
 
     public async Task<Client?> GetByUserNameAsync(string userName, CancellationToken cancellationToken = default) =>
         await _dbContext

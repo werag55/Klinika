@@ -3,8 +3,8 @@ using MediatR;
 
 namespace Klinika.Application.Clients.CreateClient;
 
-public class CreateClientCommand(UpsertClientDTO Client) : IRequest<UpsertClientDTO>
+public class CreateClientCommand(CreateClientDTO Client) : IRequest<GetClientDTO>
 {
-    public UpsertClientDTO Client { get; } = Client;
+    public CreateClientDTO Client { get; } = Client;
 }
 
