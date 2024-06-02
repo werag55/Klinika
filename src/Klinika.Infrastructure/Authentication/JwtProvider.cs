@@ -16,7 +16,7 @@ internal sealed class JwtProvider(IOptions<JwtOptions> options) : IJwtProvider
     {
         var claims = new Claim[]
         {
-            new(JwtRegisteredClaimNames.Sub, $"{new Guid()} {client.Id.ToString()}"),
+            new(JwtRegisteredClaimNames.Sub, client.Id.ToString()),
             new(JwtRegisteredClaimNames.UniqueName, client.UserName)
         };
 
