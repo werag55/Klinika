@@ -3,7 +3,7 @@
     public class Appoitment
     {
         public int Id { get; set; }
-        //public string GUID { get; set; } = null!;
+        public Guid Guid { get; set; }
         public DateTime Date { get; set; }
         public int CatId { get; set; }
         public Cat Cat { get; set; } = null!;

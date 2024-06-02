@@ -3,8 +3,8 @@ using MediatR;
 
 namespace Klinika.Application.Clients.DeleteClient;
 
-public class DeleteClientCommand(int id) : IRequest<Client>
+public class DeleteClientCommand(string UserName) : IRequest<Client>
 {
-    public int Id { get; } = id;
+    public string UserName { get; } = UserName;
 }
 

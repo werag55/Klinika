@@ -1,8 +1,9 @@
-﻿using MediatR;
+﻿using Klinika.Application.Clients.ClientsDTO;
+using MediatR;
 
 namespace Klinika.Application.Clients.Login;
 
-public class LoginCommand(string userName) : IRequest<string>
+public class LoginCommand(LoginClientDTO login) : IRequest<string>
 {
-    public string UserName = userName;
+    public LoginClientDTO Login = login;
 }

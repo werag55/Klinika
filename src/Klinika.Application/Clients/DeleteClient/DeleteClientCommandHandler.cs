@@ -17,13 +17,13 @@ public class DeleteClientCommandHandler : IRequestHandler<DeleteClientCommand, C
 
     public async Task<Client> Handle(DeleteClientCommand request, CancellationToken cancellationToken)
     {
-        var Client = await _ClientRepository.GetByIdAsync(request.Id);
+        var Client = await _ClientRepository.GetByUserNameAsync(request.UserName);
         if (Client != null)
         {
             _ClientRepository.Remove(Client);
             await _unitOfWork.SaveChangesAsync();
         }
-        return Client ?? throw new Exception("Client not found for the given id."); ;
+        return Client ?? throw new Exception("Client not found for the given User Name.");
     }
 }
 

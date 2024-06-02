@@ -1,10 +1,10 @@
-﻿using Klinika.Domain.Models;
+﻿using Klinika.Application.Clients.ClientsDTO;
 using MediatR;
 
 namespace Klinika.Application.Clients.UpdateClient;
 
-public class UpdateClientCommand(int id, Client Client) : IRequest<Client>
+public class UpdateClientCommand(string UserName, UpsertClientDTO Client) : IRequest<UpsertClientDTO>
 {
-    public int Id { get; } = id;
-    public Client Client { get; } = Client;
+    public string UserName { get; } = UserName;
+    public UpsertClientDTO Client { get; } = Client;
 }

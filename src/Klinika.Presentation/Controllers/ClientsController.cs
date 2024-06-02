@@ -8,11 +8,12 @@ using Klinika.Domain.Models;
 using Klinika.Domain.Repositories;
 using MediatR;
 using Klinika.Application.Clients.GetClients;
-using Klinika.Application.Clients.GetClientById;
+using Klinika.Application.Clients.GetClientByUserName;
 using Klinika.Application.Clients.UpdateClient;
 using Klinika.Application.Clients.CreateClient;
 using Klinika.Application.Clients.DeleteClient;
 using Klinika.Application.Clients.Login;
+using Klinika.Application.Clients.ClientsDTO;
 using System.Security.Authentication;
 
 namespace Klinika.Presentation.Controllers
@@ -28,7 +29,7 @@ namespace Klinika.Presentation.Controllers
 
         // GET: api/Clients
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Client>>> GetClients([FromQuery] int page = 1, [FromQuery] int pageSize = 10)
+        public async Task<ActionResult<IEnumerable<GetClientDTO>>> GetClients([FromQuery] int page = 1, [FromQuery] int pageSize = 10)
         {
             //var query = _context.Clients.AsQueryable();
 
@@ -54,10 +55,10 @@ namespace Klinika.Presentation.Controllers
         }
 
         // GET: api/Clients/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Client>> GetClient(int id)
+        [HttpGet("{userName}")]
+        public async Task<ActionResult<GetClientDTO>> GetClient(string userName)
         {
-            var query = new GetClientByIdQuery(id);
+            var query = new GetClientByUserNameQuery(userName);
             var result = await _mediator.Send(query);
             if (result == null)
             {
@@ -67,17 +68,17 @@ namespace Klinika.Presentation.Controllers
         }
 
 
-        // PUT: api/Clients/5
+        // PUT: api/Clients/JanKowalski
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutClient(int id, Client Client)
+        [HttpPut("{userName}")]
+        public async Task<IActionResult> PutClient(string userName, [FromBody] UpsertClientDTO Client)
         {
-            if (id != Client.Id)
+            if (userName != Client.UserName)
             {
                 return BadRequest();
             }
 
-            var command = new UpdateClientCommand(id, Client);
+            var command = new UpdateClientCommand(userName, Client);
             await _mediator.Send(command);
             return NoContent();
         }
@@ -85,28 +86,28 @@ namespace Klinika.Presentation.Controllers
         // POST: api/Clients
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Client>> PostClient(Client Client)
+        public async Task<ActionResult<Client>> PostClient([FromBody] UpsertClientDTO Client)
         {
             var command = new CreateClientCommand(Client);
             var result = await _mediator.Send(command);
-            return CreatedAtAction("GetClient", new { id = result.Id }, result);
+            return CreatedAtAction("GetClient", new { userName = result.UserName }, result);
         }
 
-        // DELETE: api/Clients/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteClient(int id)
+        // DELETE: api/Clients/JanKowalski
+        [HttpDelete("{userName}")]
+        public async Task<IActionResult> DeleteClient(string userName)
         {
-            var command = new DeleteClientCommand(id);
+            var command = new DeleteClientCommand(userName);
             await _mediator.Send(command);
             return NoContent();
         }
 
         [HttpPost("Login")]
-        public async Task<IActionResult> LoginClient([FromBody] string userName)
+        public async Task<IActionResult> LoginClient([FromBody] LoginClientDTO login)
         {
             try
             {
-                var command = new LoginCommand(userName);
+                var command = new LoginCommand(login);
                 var result = await _mediator.Send(command);
                 return Ok(result);
             }

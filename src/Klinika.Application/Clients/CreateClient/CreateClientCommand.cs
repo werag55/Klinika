@@ -1,10 +1,10 @@
-﻿using Klinika.Domain.Models;
+﻿using Klinika.Application.Clients.ClientsDTO;
 using MediatR;
 
 namespace Klinika.Application.Clients.CreateClient;
 
-public class CreateClientCommand(Client Client) : IRequest<Client>
+public class CreateClientCommand(UpsertClientDTO Client) : IRequest<UpsertClientDTO>
 {
-    public Client Client { get; } = Client;
+    public UpsertClientDTO Client { get; } = Client;
 }
 
