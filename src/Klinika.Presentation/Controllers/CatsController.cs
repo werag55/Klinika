@@ -9,6 +9,7 @@ using Klinika.Application.Cats.CreateCat;
 using Klinika.Application.Cats.DeleteCat;
 using Microsoft.AspNetCore.Authorization;
 using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 
 namespace Klinika.Presentation.Controllers
 {
@@ -83,7 +84,7 @@ namespace Klinika.Presentation.Controllers
         [Authorize]
         public async Task<ActionResult<Cat>> PostCat(Cat cat)
         {
-            var userName = User.FindFirst(JwtRegisteredClaimNames.UniqueName)?.Value;
+            var userName = User.FindFirst(ClaimTypes.Name)?.Value;
 
             var command = new CreateCatCommand(cat);
             var result = await _mediator.Send(command);
