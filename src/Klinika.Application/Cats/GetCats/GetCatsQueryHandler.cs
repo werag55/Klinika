@@ -1,16 +1,18 @@
 ﻿using MediatR;
-using Klinika.Domain.Models;
 using Klinika.Domain.Repositories;
+using Klinika.Application.Cats.CatsDTO;
+using AutoMapper;
 
 namespace Klinika.Application.Cats.GetCats;
 
-public class GetCatQueryHandler(ICatRepository catRepository) : IRequestHandler<GetCatsQuery, IEnumerable<Cat>>
+public class GetCatQueryHandler(ICatRepository catRepository, IMapper Mapper) 
+    : IRequestHandler<GetCatsQuery, IEnumerable<GetCatDTO>>
 {
     private readonly ICatRepository _catRepository = catRepository;
-
-    public async Task<IEnumerable<Cat>> Handle(GetCatsQuery request, CancellationToken cancellationToken)
+    private readonly IMapper _Mapper = Mapper;
+    public async Task<IEnumerable<GetCatDTO>> Handle(GetCatsQuery request, CancellationToken cancellationToken)
     {
-        return await _catRepository.GetAllAsync();
+        return _Mapper.Map<List<GetCatDTO>>( await _catRepository.GetAllAsync(cancellationToken));
     }
 }
 

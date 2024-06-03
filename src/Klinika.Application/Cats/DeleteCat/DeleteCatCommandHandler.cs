@@ -17,11 +17,11 @@ public class DeleteCatCommandHandler : IRequestHandler<DeleteCatCommand, Cat>
 
     public async Task<Cat> Handle(DeleteCatCommand request, CancellationToken cancellationToken)
     {
-        var Cat = await _CatRepository.GetByIdAsync(request.Id);
+        var Cat = await _CatRepository.GetByGuidAsync(request.Guid, cancellationToken);
         if (Cat != null)
         {
             _CatRepository.Remove(Cat);
-            await _unitOfWork.SaveChangesAsync();
+            await _unitOfWork.SaveChangesAsync(cancellationToken);
         }
         return Cat ?? throw new Exception("Cat not found for the given id."); ;
     }

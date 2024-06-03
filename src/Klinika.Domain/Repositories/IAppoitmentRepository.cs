@@ -7,7 +7,7 @@ public interface IAppoitmentRepository
 {
     Task<List<Appoitment>> GetAllAsync(CancellationToken cancellationToken = default);
 
-    Task<Appoitment?> GetByIdAsync(int id, CancellationToken cancellationToken = default);
+    Task<Appoitment?> GetByGuidAsync(string guid, CancellationToken cancellationToken = default);
 
     Task<Appoitment?> GetByDateAsync (DateTime date, CancellationToken cancellationToken = default);
 

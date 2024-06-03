@@ -7,7 +7,7 @@ public interface ICatRepository
 {
     Task<List<Cat>> GetAllAsync(CancellationToken cancellationToken = default);
 
-    Task<Cat?> GetByIdAsync(int id, CancellationToken cancellationToken = default);
+    Task<Cat?> GetByGuidAsync(string guid, CancellationToken cancellationToken = default);
 
     void Add(Cat cat);
     void Update(Cat cat);

@@ -8,11 +8,14 @@ using Klinika.Domain.Models;
 using Klinika.Domain.Repositories;
 using MediatR;
 using Klinika.Application.Appoitments.GetAppoitments;
-using Klinika.Application.Appoitments.GetAppoitmentById;
+using Klinika.Application.Appoitments.GetAppoitmentByGuid;
 using Klinika.Application.Appoitments.UpdateAppoitment;
 using Klinika.Application.Appoitments.CreateAppoitment;
 using Klinika.Application.Appoitments.DeleteAppoitment;
 using Klinika.Application.Appoitments.CheckAppoitmentByDate;
+using Klinika.Application.Appoitments.AppoitmentsDTO;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Klinika.Presentation.Controllers
 {
@@ -27,7 +30,7 @@ namespace Klinika.Presentation.Controllers
 
         // GET: api/Appoitments
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Appoitment>>> GetAppoitments([FromQuery] int page = 1, [FromQuery] int pageSize = 10)
+        public async Task<ActionResult<IEnumerable<GetAppoitmentDTO>>> GetAppoitments([FromQuery] int page = 1, [FromQuery] int pageSize = 10)
         {
             //var query = _context.Appoitments.AsQueryable();
 
@@ -53,10 +56,10 @@ namespace Klinika.Presentation.Controllers
         }
 
         // GET: api/Appoitments/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Appoitment>> GetAppoitment(int id)
+        [HttpGet("{guid}")]
+        public async Task<ActionResult<GetAppoitmentDTO>> GetAppoitment(string guid)
         {
-            var query = new GetAppoitmentByIdQuery(id);
+            var query = new GetAppoitmentByGuidQuery(guid);
             var result = await _mediator.Send(query);
             if (result == null)
             {
@@ -67,7 +70,7 @@ namespace Klinika.Presentation.Controllers
 
        // GET: api/Appoitments/Date
        [HttpGet("Date")]
-        public async Task<IActionResult> CheckDate(DateTime date)
+        public async Task<IActionResult> CheckDate([FromBody] DateTime date)
         {
             var query = new CheckAppoitmentByDateQuery(date);
             var result = await _mediator.Send(query);
@@ -80,15 +83,10 @@ namespace Klinika.Presentation.Controllers
 
         // PUT: api/Appoitments/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutAppoitment(int id, Appoitment appoitment)
+        [HttpPut("{guid}")]
+        public async Task<IActionResult> PutAppoitment(string guid, [FromBody] UpsertAppoitmentDTO appoitment)
         {
-            if (id != appoitment.Id)
-            {
-                return BadRequest();
-            }
-
-            var command = new UpdateAppoitmentCommand(id, appoitment);
+            var command = new UpdateAppoitmentCommand(guid, appoitment);
             await _mediator.Send(command);
             return NoContent();
         }
@@ -96,18 +94,22 @@ namespace Klinika.Presentation.Controllers
         // POST: api/Appoitments
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Appoitment>> PostAppoitment(Appoitment appoitment)
+        [Authorize]
+        public async Task<ActionResult<GetAppoitmentDTO>> PostAppoitment([FromBody] UpsertAppoitmentDTO appoitment)
         {
-            var command = new CreateAppoitmentCommand(appoitment);
+            var userName = User.FindFirst(ClaimTypes.Name)?.Value
+                ?? throw new Exception("User Name was null");
+   
+            var command = new CreateAppoitmentCommand(userName, appoitment);
             var result = await _mediator.Send(command);
-            return CreatedAtAction("GetAppoitment", new { id = result.Id }, result);
+            return CreatedAtAction("GetAppoitment", new { guid = result.Guid }, result);
         }
 
         // DELETE: api/Appoitments/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteAppoitment(int id)
+        [HttpDelete("{guid}")]
+        public async Task<IActionResult> DeleteAppoitment(string guid)
         {
-            var command = new DeleteAppoitmentCommand(id);
+            var command = new DeleteAppoitmentCommand(guid);
             await _mediator.Send(command);
             return NoContent();
         }

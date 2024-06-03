@@ -1,10 +1,11 @@
-﻿using Klinika.Domain.Models;
+﻿using Klinika.Application.Cats.CatsDTO;
 using MediatR;
 
 namespace Klinika.Application.Cats.CreateCat;
 
-public class CreateCatCommand(Cat Cat) : IRequest<Cat>
+public class CreateCatCommand(string userName, UpsertCatDTO Cat) : IRequest<GetCatDTO>
 {
-    public Cat Cat { get; } = Cat;
+    public string UserName { get; } = userName;
+    public UpsertCatDTO Cat { get; } = Cat;
 }
 

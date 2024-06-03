@@ -4,7 +4,8 @@ using MediatR;
 
 namespace Klinika.Application.Appoitments.CheckAppoitmentByDate;
 
-public class CheckAppoitmentByIdQueryHandler(IAppoitmentRepository appoitmentRepository) : IRequestHandler<CheckAppoitmentByDateQuery, bool>
+public class CheckAppoitmentByIdQueryHandler(IAppoitmentRepository appoitmentRepository) 
+    : IRequestHandler<CheckAppoitmentByDateQuery, bool>
 {
     private readonly IAppoitmentRepository _appoitmentRepository = appoitmentRepository;
 
