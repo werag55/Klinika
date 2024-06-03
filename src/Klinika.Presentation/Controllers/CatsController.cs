@@ -65,7 +65,7 @@ namespace Klinika.Presentation.Controllers
         // PUT: api/Cats/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{guid}")]
-        public async Task<IActionResult> PutCat(string guid, UpsertCatDTO cat)
+        public async Task<IActionResult> PutCat(string guid, [FromBody] UpsertCatDTO cat)
         {
              var command = new UpdateCatCommand(guid, cat);
             await _mediator.Send(command);
@@ -76,7 +76,7 @@ namespace Klinika.Presentation.Controllers
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         [Authorize]
-        public async Task<ActionResult<GetCatDTO>> PostCat(UpsertCatDTO cat)
+        public async Task<ActionResult<GetCatDTO>> PostCat([FromBody] UpsertCatDTO cat)
         {
             var userName = User.FindFirst(ClaimTypes.Name)?.Value;
 

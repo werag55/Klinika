@@ -23,10 +23,8 @@ public class UpdateCatCommandHandler : IRequestHandler<UpdateCatCommand, GetCatD
 
     public async Task<GetCatDTO> Handle(UpdateCatCommand request, CancellationToken cancellationToken)
     {
-        Cat? cat = await _CatRepository.GetByGuidAsync(request.Guid, cancellationToken);
-
-        if (cat == null)
-            throw new Exception("Cat not found for the given Guid.");
+        Cat? cat = await _CatRepository.GetByGuidAsync(request.Guid, cancellationToken) 
+            ?? throw new Exception("Cat not found for the given Guid.");
 
         cat.Name = request.Cat.Name;
         cat.Age = request.Cat.Age;

@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 namespace Klinika.Application.Appoitments.AppoitmentsDTO
 {
     public sealed record UpsertAppoitmentDTO(
-        Guid Guid,
         DateTime Date,
-        Guid CatGuid,
-        Guid ClientGuid
+        string CatGuid,
+        string ClientGuid
         );
 }

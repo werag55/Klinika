@@ -10,14 +10,21 @@ namespace Klinika.Mapper
     {
         public MappingConfig()
         {
-            CreateMap<Client, GetClientDTO>();
             CreateMap<Cat, GetClientCatDTO>();
+            CreateMap<Client, GetClientDTO>();
             CreateMap<CreateClientDTO, Client>()
                 .ForMember(dest => dest.Guid, opt => opt.MapFrom(src => Guid.NewGuid()));
 
-            CreateMap<Cat, GetCatDTO>();
             CreateMap<Client, GetCatClientDTO>();
+            CreateMap<Cat, GetCatDTO>();
             CreateMap<UpsertCatDTO, Cat>()
+                .ForMember(dest => dest.Guid, opt => opt.MapFrom(src => Guid.NewGuid()));
+
+            CreateMap<Client, GetAppoitmentClientDTO>();
+            CreateMap<Cat, GetAppoitmentCatDTO>();
+            CreateMap<Appoitment, GetAppoitmentDTO>();
+            CreateMap<Client, GetCatClientDTO>();
+            CreateMap<UpsertAppoitmentDTO, Appoitment>()
                 .ForMember(dest => dest.Guid, opt => opt.MapFrom(src => Guid.NewGuid()));
         }
     }

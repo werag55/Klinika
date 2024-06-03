@@ -3,8 +3,8 @@ using MediatR;
 
 namespace Klinika.Application.Appoitments.DeleteAppoitment;
 
-public class DeleteAppoitmentCommand(int id) : IRequest<Appoitment>
+public class DeleteAppoitmentCommand(string guid) : IRequest<Appoitment>
 {
-    public int Id { get; } = id;
+    public string Guid { get; } = guid;
 }
 

@@ -17,13 +17,13 @@ public class DeleteAppoitmentCommandHandler : IRequestHandler<DeleteAppoitmentCo
 
     public async Task<Appoitment> Handle(DeleteAppoitmentCommand request, CancellationToken cancellationToken)
     {
-        var appoitment = await _appoitmentRepository.GetByIdAsync(request.Id);
+        var appoitment = await _appoitmentRepository.GetByGuidAsync(request.Guid, cancellationToken);
         if (appoitment != null)
         {
             _appoitmentRepository.Remove(appoitment);
-            await _unitOfWork.SaveChangesAsync();
+            await _unitOfWork.SaveChangesAsync(cancellationToken);
         }
-        return appoitment ?? throw new Exception("Appoitment not found for the given id."); ;
+        return appoitment ?? throw new Exception("Appoitment not found for the given Guid."); ;
     }
 }
 

@@ -24,10 +24,10 @@ internal sealed class AppoitmentRepository : IAppoitmentRepository
                 .Set<Appoitment>().Include(client => client.Cat).Include(client => client.Client)
                 .FirstOrDefaultAsync(member => member.Date.Date == date.Date && member.Date.Hour == date.Hour, cancellationToken);
 
-    public async Task<Appoitment?> GetByIdAsync(int id, CancellationToken cancellationToken = default) =>
+    public async Task<Appoitment?> GetByGuidAsync(string guid, CancellationToken cancellationToken = default) =>
         await _dbContext
                 .Set<Appoitment>().Include(client => client.Cat).Include(client => client.Client)
-                .FirstOrDefaultAsync(member => member.Id == id, cancellationToken);
+                .FirstOrDefaultAsync(member => member.Guid.ToString() == guid, cancellationToken);
 
     public void Remove(Appoitment Appoitment) =>
         _dbContext.Set<Appoitment>().Remove(Appoitment);

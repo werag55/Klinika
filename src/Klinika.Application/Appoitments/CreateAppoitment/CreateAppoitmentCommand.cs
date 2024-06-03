@@ -1,10 +1,11 @@
-﻿using Klinika.Domain.Models;
+﻿using Klinika.Application.Appoitments.AppoitmentsDTO;
+using Klinika.Domain.Models;
 using MediatR;
 
 namespace Klinika.Application.Appoitments.CreateAppoitment;
 
-public class CreateAppoitmentCommand(Appoitment appoitment) : IRequest<Appoitment>
+public class CreateAppoitmentCommand(UpsertAppoitmentDTO appoitment) : IRequest<GetAppoitmentDTO>
 {
-    public Appoitment Appoitment { get; } = appoitment;
+    public UpsertAppoitmentDTO Appoitment { get; } = appoitment;
 }
 

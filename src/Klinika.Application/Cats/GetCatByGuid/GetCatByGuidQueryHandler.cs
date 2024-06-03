@@ -14,7 +14,7 @@ public class GetCatByGuidQueryHandler(ICatRepository CatRepository, IMapper Mapp
     public async Task<GetCatDTO> Handle(GetCatByGuidQuery request, CancellationToken cancellationToken)
     {
         return _Mapper.Map<GetCatDTO>(await _CatRepository.GetByGuidAsync(request.Guid, cancellationToken))
-            ?? throw new Exception("Cat not found for the given id.");
+            ?? throw new Exception("Cat not found for the given Guid.");
     }
 }
 
