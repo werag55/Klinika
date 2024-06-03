@@ -4,8 +4,9 @@ using MediatR;
 
 namespace Klinika.Application.Appoitments.CreateAppoitment;
 
-public class CreateAppoitmentCommand(UpsertAppoitmentDTO appoitment) : IRequest<GetAppoitmentDTO>
+public class CreateAppoitmentCommand(string userName, UpsertAppoitmentDTO appoitment) : IRequest<GetAppoitmentDTO>
 {
+    public string UserName { get; } = userName;
     public UpsertAppoitmentDTO Appoitment { get; } = appoitment;
 }
 

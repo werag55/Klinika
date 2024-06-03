@@ -8,7 +8,6 @@ namespace Klinika.Application.Appoitments.AppoitmentsDTO
 {
     public sealed record UpsertAppoitmentDTO(
         DateTime Date,
-        string CatGuid,
-        string ClientGuid
+        string CatGuid
         );
 }

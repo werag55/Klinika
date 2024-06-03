@@ -19,15 +19,17 @@ public class CreateCatCommandHandler(ICatRepository CatRepository, IClientReposi
         Cat cat = _Mapper.Map<Cat>(request.Cat);
         cat.Owners = [];
 
-        if (request.Cat.OwnersUserNames != null)
-            foreach (var username in request.Cat.OwnersUserNames)
-            {
-                cat.Owners.Add(await _ClientRepository.GetByUserNameAsync(username, cancellationToken)
-                    ?? throw new Exception("Clien not found for the given User Name."));
-            }
+        List<string>? OwnersUserNames = request.Cat.OwnersUserNames;
+        OwnersUserNames ??= new List<string> { request.UserName };
+
+        foreach (var username in OwnersUserNames)
+        {
+            cat.Owners.Add(await _ClientRepository.GetByUserNameAsync(username, cancellationToken)
+                ?? throw new Exception("Clien not found for the given User Name."));
+        }
 
         _CatRepository.Add(cat);
         await _unitOfWork.SaveChangesAsync(cancellationToken);
-        return _Mapper.Map<GetCatDTO>(request.Cat);
+        return _Mapper.Map<GetCatDTO>(cat);
     }
 }

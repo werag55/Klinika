@@ -25,8 +25,8 @@ public class CreateAppoitmentCommandHandler(IAppoitmentRepository appoitmentRepo
         appoitment.Cat = cat;
         appoitment.CatId = cat.Id;
 
-        Client client = await _clientRepository.GetByGuidAsync(request.Appoitment.ClientGuid, cancellationToken)
-            ?? throw new Exception("Client not found for the given Guid.");
+        Client client = await _clientRepository.GetByUserNameAsync(request.UserName, cancellationToken)
+            ?? throw new Exception("Client not found for the given User Name.");
 
         appoitment.Client = client;
         appoitment.ClientId = client.Id;

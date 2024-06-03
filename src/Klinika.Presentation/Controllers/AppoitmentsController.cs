@@ -14,6 +14,8 @@ using Klinika.Application.Appoitments.CreateAppoitment;
 using Klinika.Application.Appoitments.DeleteAppoitment;
 using Klinika.Application.Appoitments.CheckAppoitmentByDate;
 using Klinika.Application.Appoitments.AppoitmentsDTO;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Klinika.Presentation.Controllers
 {
@@ -92,9 +94,13 @@ namespace Klinika.Presentation.Controllers
         // POST: api/Appoitments
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
+        [Authorize]
         public async Task<ActionResult<GetAppoitmentDTO>> PostAppoitment([FromBody] UpsertAppoitmentDTO appoitment)
         {
-            var command = new CreateAppoitmentCommand(appoitment);
+            var userName = User.FindFirst(ClaimTypes.Name)?.Value
+                ?? throw new Exception("User Name was null");
+   
+            var command = new CreateAppoitmentCommand(userName, appoitment);
             var result = await _mediator.Send(command);
             return CreatedAtAction("GetAppoitment", new { guid = result.Guid }, result);
         }

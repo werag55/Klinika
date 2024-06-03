@@ -67,7 +67,7 @@ namespace Klinika.Presentation.Controllers
         [HttpPut("{guid}")]
         public async Task<IActionResult> PutCat(string guid, [FromBody] UpsertCatDTO cat)
         {
-             var command = new UpdateCatCommand(guid, cat);
+            var command = new UpdateCatCommand(guid, cat);
             await _mediator.Send(command);
             return NoContent();
         }
@@ -78,9 +78,10 @@ namespace Klinika.Presentation.Controllers
         [Authorize]
         public async Task<ActionResult<GetCatDTO>> PostCat([FromBody] UpsertCatDTO cat)
         {
-            var userName = User.FindFirst(ClaimTypes.Name)?.Value;
+            var userName = User.FindFirst(ClaimTypes.Name)?.Value
+                ?? throw new Exception("User Name was null");
 
-            var command = new CreateCatCommand(cat);
+            var command = new CreateCatCommand(userName, cat);
             var result = await _mediator.Send(command);
             return CreatedAtAction("GetCat", new { guid = result.Guid }, result);
         }

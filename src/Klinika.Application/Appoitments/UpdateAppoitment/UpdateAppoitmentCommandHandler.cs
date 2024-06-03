@@ -40,16 +40,6 @@ public class UpdateAppoitmentCommandHandler : IRequestHandler<UpdateAppoitmentCo
             appoitment.CatId = cat.Id;
         }
 
-        if (appoitment.Client.Guid.ToString() != request.Appoitment.ClientGuid)
-        {
-
-            Client client = await _clientRepository.GetByGuidAsync(request.Appoitment.ClientGuid, cancellationToken)
-            ?? throw new Exception("Client not found for the given Guid.");
-
-            appoitment.Client = client;
-            appoitment.ClientId = client.Id;
-        }
-
         _appoitmentRepository.Update(appoitment);
         await _unitOfWork.SaveChangesAsync(cancellationToken);
         return _Mapper.Map<GetAppoitmentDTO>(appoitment);

@@ -41,7 +41,7 @@ public class UpdateCatCommandHandler : IRequestHandler<UpdateCatCommand, GetCatD
 
         _CatRepository.Update(cat);
         await _unitOfWork.SaveChangesAsync(cancellationToken);
-        return _Mapper.Map<GetCatDTO>(request.Cat);
+        return _Mapper.Map<GetCatDTO>(cat);
     }
 }
 
